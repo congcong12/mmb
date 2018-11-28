@@ -1,0 +1,229 @@
+html {
+  font-size: 100px;
+}
+body {
+  font-size: 0.14rem;
+  padding-top: 0.45rem;
+}
+img {
+  vertical-align: middle;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+html,
+body {
+  height: 100%;
+  background: #fff;
+}
+main {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#header {
+  display: flex;
+  height: 0.45rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background: #ff841d;
+}
+#header > .fa-angle-left {
+  width: 0.45rem;
+  height: 0.45rem;
+  display: block;
+  font-size: 0.45rem;
+  color: #fff;
+  text-align: center;
+}
+#header > h4 {
+  flex: 1;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  display: block;
+  line-height: .45rem;
+  color: #fff;
+  font-size: 0.24rem;
+}
+#header > .header-app {
+  width: 0.45rem;
+  height: 0.45rem;
+  display: block;
+  background: url(../images/header_app.png);
+  background-size: cover;
+  margin-right: 0.1rem;
+}
+#footer {
+  background: #efefef;
+  height: 1rem;
+}
+#footer .mui-row {
+  height: .3rem;
+  border-bottom: 1px solid #ccc;
+}
+#footer .mui-row .mui-col-xs-4 {
+  text-align: center;
+  line-height: .3rem;
+}
+#footer .mui-row .mui-col-xs-4 > a {
+  color: #000;
+}
+#footer .mui-row .mui-col-xs-4 + .mui-col-xs-4 {
+  border-left: 1px solid #ccc;
+}
+#footer .foot-connect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .05rem 0;
+}
+#footer .foot-connect p {
+  margin: 0;
+}
+#footer .foot-connect p.appLoad {
+  color: red;
+}
+#footer .foot-connect p span {
+  color: #8f8f94;
+}
+#footer .foot-connect p span.phone {
+  color: #000;
+}
+#main .sale .name-id {
+  height: .56rem;
+  padding: 0.1rem 0.1rem;
+}
+#main .sale .name-id > span {
+  color: #999;
+  font-size: .14rem;
+}
+#main .sale .main-center {
+  padding: 0 0.2rem;
+}
+#main .sale .main-center .right-picture {
+  float: right;
+}
+#main .sale .main-center .right-picture > img {
+  width: 1.2rem;
+}
+#main .sale .main-center .left-connect p {
+  font-size: .16rem;
+  line-height: .24rem;
+  color: #000;
+}
+#main .sale .main-center .city-trade {
+  margin: .1rem 0;
+}
+#main .sale .main-center .city-trade .drop #disstorck {
+  width: 1.36rem;
+  margin: 0 auto;
+  box-shadow: 0 0 5px #ccc;
+  padding: 0 0.05rem 0.1rem 0.05rem;
+}
+#main .sale .main-center .city-trade .drop #disstorck li {
+  height: .21rem;
+  border-bottom: 1px dashed #ccc;
+}
+#main .sale .main-center .city-trade .drop #disstorck li a {
+  font-size: .12rem;
+  color: #000;
+}
+#main .sale .main-center .city-trade .drop #disstorck li a span strong {
+  float: right;
+  color: #f27b04;
+  font-weight: normal;
+}
+#main .sale .main-center .gobuy {
+  height: .3rem;
+}
+#main .sale .main-center .gobuy > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #ff841d;
+  line-height: 0.3rem;
+  text-align: center;
+  border-radius: 0.05rem;
+  color: white;
+}
+#main .sale .main-center .bigpicture {
+  padding: .2rem 0;
+}
+#main .sale .main-center .bigpicture > img {
+  width: 100%;
+}
+#main .talk {
+  padding: 0 0.2rem;
+}
+#main .talk .talkbox .tit {
+  font-size: .16rem;
+  padding: 0.1rem 0;
+}
+#main .talk .talkbox .form {
+  box-shadow: 0 0 0.05rem #ccc;
+}
+#main .talk .talkbox .form textarea {
+  width: 100%;
+  border: none;
+}
+#main .talk .talkbox .form .ctrl {
+  height: .36rem;
+  width: 100%;
+  background-color: #fbfbfb;
+}
+#main .talk .talkbox .form .ctrl > input {
+  float: right;
+  height: .38rem;
+  background: #ff841d;
+  width: 100px;
+  border-radius: 0.05rem;
+  border: none;
+  font-size: 16px;
+  color: white;
+}
+#main .talk .talkbox .list {
+  padding: 0.1rem 0;
+}
+#main .talk .talkbox .list ul li {
+  height: .8rem;
+  display: flex;
+  width: 100%;
+}
+#main .talk .talkbox .list ul li .userimg {
+  width: 40px;
+  height: 40px;
+}
+#main .talk .talkbox .list ul li .userimg > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+#main .talk .talkbox .list ul li .con {
+  flex: 1;
+  padding: 0 0.1rem;
+}
+#main .talk .talkbox .list ul li .con .name {
+  height: .17rem;
+  width: 100%;
+}
+#main .talk .talkbox .list ul li .con .name .username {
+  color: #5997c0;
+  float: left;
+}
+#main .talk .talkbox .list ul li .con .name .time {
+  color: #999;
+  float: right;
+}
+#main .talk .talkbox .list ul li .con .content {
+  width: 100%;
+  float: left;
+}

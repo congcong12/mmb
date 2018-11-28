@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>省钱控</title>
+    <link rel="stylesheet" type="text/css" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" type="text/css" href="lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet/less" href="less/save-sale.less">
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <a href="moneyctrl.html" class="fa fa-angle-left"></a>
+        <h4 class="h4-text">国内折扣</h4>
+        <a href="#" class="header-app"></a>
+    </header>
+    <main id="main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <div class="sale">
+                    <div class="name-id">
+                        <span>京东商城</span>
+                        <span>10-25 14:10</span>
+                        <span>小编烟火 / 慢慢买</span>
+                    </div>
+                    <div class="main-center">
+                        <div class="right-picture">
+
+                        </div>
+                        <div class="left-connect">
+                            <p>
+                                海天的金标生抽酱油，采用了非转基因大豆以及小麦发酵而成，而自然鲜的口感是有些鲜甜鲜甜的感觉，非常适合用来作为日常炒菜用的调味料，当然也能用作白切系列的蘸酱调料，相信吃过美味鲜的慢友们都了解的。
+                            </p>
+                            <p> 目前京东商城移动端售价10.9元，不错的凑单品，刚需可入，规格1.28L。 </p>
+                        </div>
+                        <div class="left-picture">
+
+                        </div>
+                        <div class="city-trade">
+                            <div class="drop">
+                                <ul>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="gobuy">
+                            <a href="#">前往购买</a>
+                        </div>
+                        <div class="bigpicture">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="talk">
+                    <div class="talkbox">
+                        
+                    </div>
+                </div>
+                <footer id="footer">
+                        <div class="mui-content">
+                            <div class="mui-row">
+                                <div class="mui-col-xs-4">
+                                    <a href="#">登录</a>
+                                </div>
+                                <div class="mui-col-xs-4">
+                                    <a href="#">注册</a>
+                                </div>
+                                <div class="mui-col-xs-4 goTop">
+                                    <a href="#">返回顶部</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="foot-connect">
+                            <p class="appLoad">手机APP下载 <span class="phone">慢慢买手机版</span> <span>-- 掌上比价平台</span></p>
+                            <p class="location">m.manmanbuy.com</p>
+                        </div>
+                    </footer>
+            </div>
+        </div>
+    </main>
+    <script id="mainTpl-sale" type="text/html">
+        {{each result value}}
+            <div class="name-id">
+                <span>{{value.productFrom}}</span>
+                <span>{{value.productTime}}</span>
+                <span>{{value.productTips}}</span>
+            </div>
+            <div class="main-center">
+                <div class="right-picture">
+                    {{@value.productImgSm}}
+                </div>
+                <div class="left-connect">
+                    <p>{{value.productInfo}}</p>
+                    <p>{{value.productInfo1}}</p>
+                </div>
+                <div class="left-picture">
+                    {{@value.productImgSm}}
+                </div>
+                <div class="city-trade">
+                    <div class="drop">
+                        {{@value.productCity}}
+                    </div>
+                </div>
+                <div class="gobuy">
+                    <a href="#">前往购买</a>
+                </div>
+                <div class="bigpicture">
+                    <img src="images/mmbweixin2.png" alt="">
+                </div>
+            </div>
+        {{/each}}
+    </script>
+    <script id="mainTpl-talk" type="text/html">
+        {{each result value}}      
+                {{@value.productComment}}
+        {{/each}}
+    </script>
+</body>
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/save-sale.js"></script>
+
+</html>
