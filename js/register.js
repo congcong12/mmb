@@ -1,12 +1,15 @@
 $(function(){
     var mmb = new MMB();
     mmb.register();
+    mmb.createCode();
 })
 var MMB =function(){
 
 }
 
 MMB.prototype={
+    code:'',
+
     register:function(){
         var that = this ;
         $('.btn').on('tap',function(){
@@ -23,7 +26,7 @@ MMB.prototype={
                 if(check){
                     var password = $('.password').val();
                     var mobile = $('.mobile').val();
-                    var putCodeNum=$('.putCodeNum').val();
+                    var yzinput=$('.yzinput').val();
                     // 3. 验证手机号是否合法
                     if (!(/^1[345789]\d{9}$/.test(mobile))) {
                         mui.alert('您输入的手机号不合法！');
@@ -37,8 +40,26 @@ MMB.prototype={
                         mui.alert('您输入的密码过短');
                         return false;
                     }
-
+                    if(yzinput!=that.code-0){
+                        mui.alert('验证码有误');
+                        return false;
+                    }
+                   
                 }
+        })
+    },
+    createCode:function(){
+        var that = this ;
+        $('.yzbtn').on('tap',function(){
+            that.code="";
+            for(var i=0;i<6;i++){
+                var num=Math.floor(Math.random()*10);
+                that.code += num;
+            }
+            console.log(that.code);
         })
     }
 }
+/**
+ * Created by duanhailin on 2018/06/21.
+ */

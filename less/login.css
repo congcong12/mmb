@@ -195,3 +195,143 @@ body {
 #main .btnLoading .btn {
   width: 100%;
 }
+.bxs-row {
+  margin-bottom: .12rem;
+}
+.logo-box {
+  width: 100%;
+  border: 0.01rem solid #e5e5e5;
+  border-radius: .04rem;
+  box-shadow: 0 0.04rem 0.18rem rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  height: 3.6rem;
+}
+.login {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: .42rem .42rem .36rem;
+  transition: all 0.8s;
+}
+.username,
+.password,
+.btn {
+  height: .44rem;
+  width: 100%;
+  padding: 0 .1rem;
+  border: .01rem solid #9da3a6;
+  background: #fff;
+  text-overflow: ellipsis;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: .04rem;
+  -moz-border-radius: .04rem;
+  -khtml-border-radius: .04rem;
+  border-radius: .04rem;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: #000;
+  font-size: 1em;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  direction: ltr;
+  font-size: .13rem;
+}
+.submit {
+  background-color: #0070ba;
+  color: #fff;
+  border: .01rem solid #0070ba;
+}
+.submit:hover {
+  background-color: #005ea6;
+}
+.verBox {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 4.04rem;
+  top: 0;
+  opacity: 0;
+  transition: all 0.8s;
+  padding-top: .55rem;
+}
+.err {
+  margin: .12rem 0 0;
+  line-height: .12rem;
+  height: .12rem;
+  font-size: .12rem;
+  color: red;
+}
+.slider-btn {
+  position: absolute;
+  width: .44rem;
+  height: .44rem;
+  left: 0;
+  top: -0.07rem;
+  z-index: 12;
+  cursor: pointer;
+  background-image: url(../images/cat.png);
+  background-size: cover;
+  background-position: 0 -0.84rem;
+  transition: inherit;
+}
+.ver-tips {
+  position: absolute;
+  left: 0;
+  bottom: -0.22rem;
+  background: rgba(255, 255, 255, 0.9);
+  height: .22rem;
+  line-height: .22rem;
+  font-size: .12rem;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  padding: 0 .08rem;
+  transition: all 0.4s;
+}
+.slider-tips {
+  bottom: 0;
+}
+.ver-tips i {
+  display: inline-block;
+  width: .22rem;
+  height: .22rem;
+  vertical-align: top;
+  background-image: url(../images/9.gif);
+  background-size: cover;
+}
+.ver-tips span {
+  display: inline-block;
+  vertical-align: top;
+  line-height: .22rem;
+  color: #455;
+}
+.active-tips {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+.re-btn {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: .28rem;
+  padding: 0 .16rem;
+}
+.re-btn a {
+  display: inline-block;
+  width: .14rem;
+  height: .14rem;
+  margin: .07rem 0;
+  background-image: url(../images/10.gif);
+  background-size: cover;
+  cursor: pointer;
+}
+.re-btn a:hover {
+  background-position: 0 -11.93rem;
+}
