@@ -1,4 +1,4 @@
-$(function () {
+﻿$(function () {
 	// 实例化一个对象
 	var manmanBuy = new Manmanbuy();
 	manmanBuy.RotationChart();
@@ -12,6 +12,7 @@ var Manmanbuy = function () {
 }
 
 Manmanbuy.prototype = {
+	baseURL:'http://localhost:9090',
 	// 轮播图函数
 	RotationChart: function () {
 		//获得slider插件对象 初始化轮播图
@@ -29,7 +30,7 @@ Manmanbuy.prototype = {
 	queryProduct: function () {
 		// // 发送ajax请求   渲染页面
 		$.ajax({
-			url: 'http://localhost:9090/api/getindexmenu',
+			url: this.baseURL+ '/api/getindexmenu',
 			success: function (data) {
 				//  console.log(data);
 				var html = template('indexMenuTpl', data);
@@ -41,19 +42,15 @@ Manmanbuy.prototype = {
 	judge: function () {
 		// 判断点击更多   zz == 1 显示,zz=2;  否则隐藏 zz=2
 		$('.mui-row').on('tap', '.btn', function () {
-			var index = $(this).data('index');
-			if (index == 1) {
-				index = 2;
-				$(".more").show();
+			var zz = $(this).data('index');
+			if (zz == 1) {
+				$('.more').show();
+				zz = 2;
 			} else {
-				index = 1;
-				$(".more").animate({
-					opacity: 0,
-				}, 500, function () {
-					$(".more").hide();
-				}, 1);
+				$('.more').hide();
+				zz = 1;
 			}
-			$(this).data('index', index);
+			$(this).data('index', zz);
 		});
 		$('.btn-top').on('tap', function () {
 			mui('.mui-scroll-wrapper').scroll().scrollTo(0, 0, 2000); //100毫秒滚动到顶
@@ -63,7 +60,7 @@ Manmanbuy.prototype = {
 		// 折扣区域
 		// 发送ajax请求  渲染页面
 		$.ajax({
-			url: 'http://localhost:9090/api/getmoneyctrl',
+			url: this.baseURL+'/api/getmoneyctrl',
 			success: function (data) {
 				console.log(data);
 				var html = template('agioTpl', data);
@@ -71,5 +68,5 @@ Manmanbuy.prototype = {
 			}
 		})
 	}
-}
 
+}
