@@ -1,68 +1,41 @@
-@import 'base.less';
-#main{
-    .content{
-        ul{
-            li{
-                padding: 0.1rem 0;
-                a{
-                    display: flex;
-                    .product-left{
-                        width: 120px;
-                        img{
-                            width: 106px;
-                        }
-                    }
-                    .product-right{
-                        flex: 1;
-                        .product-name{
-                            padding:0.1rem;
-                            color: #000;
-                            >span{
-                                color: @main-color;
-                            }
-                        }
-                        .product-from{
-                            color: #ccc;
-                            >span{
-                                float: right;
-                               padding-right: .1rem
-                            }
-                            >.fa-commenting{
-                                float: right;
-                                font-size: 12px;
-                                padding-right: 0.05rem
-                            }
-                        }
-
-                    }
-                }
-            }
+@import "base-su.less";
+#main {
+    .mui-table-view-cell:after,
+    .mui-table-view:before,
+    .mui-table-view:after {
+        height: 0;
+    }
+    padding-top: .1rem;
+    .productImg {
+        width: 1rem;
+        height: 1rem;
+        float: left;
+        img {
+            width: .80rem;
         }
     }
-    .footer-bottom{
-        margin-bottom: .1rem;
-        text-align: center;
-        height: 0.36rem;
+    .mui-media-body {
+        height: 1rem;
         display: flex;
-        .f33{
-            flex: 1;
-            text-align: center;
-            >a{
-                width: .82rem;
-                display: block;
-                height: 0.36rem;
-                margin: 0 auto;
-                line-height: 0.36rem;
-                background: -webkit-gradient(linear,0 0,0 100%,from(#f1f1f1),to(#d4d4d4));
-                color: #000;
-                border-radius: 0.05rem;
+        justify-content: space-around;
+        flex-direction: column;
+        padding-left: .1rem;
+        p {
+            &.title {
+                font-size: .15rem;
+                white-space: normal;
+                color: #333;
             }
-            >#select{
-                width: 0.95rem;
-                height: 0.36rem;
-                padding: 0.08rem 0.25rem;
-
+            .price {
+                color: @span-color;
             }
         }
+        .info {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    .paging {
+        margin: .2rem;
     }
 }
