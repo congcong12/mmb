@@ -35,7 +35,7 @@ MMB.prototype = {
                     var width = $('#nav ul li')[i].offsetWidth;
                     sum += width;
                 }
-                $('#nav .mui-scroll').css('width', sum);
+                $('#nav .mui-scroll').css('width', sum + $('#nav ul li')[0].offsetWidth);
                 $('#nav ul li a').on('tap', function() {
                     $(this).parent().addClass('active').siblings().removeClass('active');
                     var id = $(this).data('id');
