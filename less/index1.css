@@ -1,0 +1,220 @@
+html {
+  font-size: 100px;
+}
+body {
+  font-size: 0.14rem;
+  background-color: #f1f1f1;
+  padding-top: .44rem;
+}
+img {
+  vertical-align: middle;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  font-weight: normal;
+  line-height: 0;
+  margin: 0;
+}
+input {
+  border: 0;
+}
+html,
+body {
+  height: 100%;
+}
+#main {
+  height: 100%;
+  overflow: hidden;
+  /* 注意还要给main加一个相对定位 因为里面的mui-scroll-wrapper设置了绝对定位 */
+  position: relative;
+}
+li {
+  list-style: none;
+}
+a {
+  color: #696969;
+  text-decoration: none;
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  padding: 0.09rem 0.1rem;
+  height: .44rem;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 0.01rem solid #d5d5d5;
+}
+#header .logo {
+  width: 27%;
+}
+#header .logo a {
+  display: block;
+}
+#header .logo a img {
+  max-width: 100%;
+  max-height: .24rem;
+}
+#header form {
+  flex: 1;
+  position: relative;
+}
+#header form i {
+  position: absolute;
+  left: 0.1rem;
+  top: 0.05rem;
+  color: #cecece;
+  font-weight: normal;
+}
+#header form input {
+  width: 95%;
+  height: 0.25rem;
+  border-radius: 0.12rem;
+  background-color: #f9f9f9;
+}
+#header .download {
+  width: .36rem;
+  height: 0.2rem;
+  border: 1px solid #ff8e59;
+  border-radius: 0.1rem;
+  margin-top: .03rem;
+}
+#header .download a {
+  display: block;
+  width: 100%;
+  height: .2rem;
+  text-align: center;
+  color: #ff8e59;
+  line-height: 0.2rem;
+  font-size: .12rem;
+}
+#main #nav {
+  min-height: 1.64rem;
+  background-color: #fff;
+  border-top: 0.01rem solid #d5d5d5;
+}
+#main #nav .mui-row {
+  text-align: center;
+  padding: .05rem;
+}
+#main #nav .mui-row a img {
+  width: 50%;
+}
+#main #nav .mui-row a p {
+  margin-top: .05rem;
+  font-size: .12rem;
+  color: #000;
+}
+#main #agio {
+  min-height: 9.66rem;
+  margin-top: .05rem;
+}
+#main #agio .agio-title {
+  display: flex;
+  justify-content: space-between;
+  padding: .1rem;
+  background-color: orangered;
+  color: #fff;
+}
+#main #agio .content ul {
+  background-color: #fff;
+}
+#main #agio .content ul li {
+  border-bottom: 0.01rem solid #d5d5d5;
+  padding: .05rem;
+}
+#main #agio .content ul li a {
+  display: flex;
+  color: #8f8f94;
+}
+#main #agio .content ul li a .left {
+  width: 120px;
+}
+#main #agio .content ul li a .left img {
+  width: 106px;
+}
+#main #agio .content ul li a .right {
+  flex: 1;
+}
+#main #agio .content ul li a .right .product-name {
+  color: #000;
+}
+#main #agio .content ul li a .right .product-name span {
+  color: red;
+}
+#main #agio .content ul li a .right .product-from {
+  font-size: .12rem;
+  display: flex;
+  justify-content: space-between;
+}
+#main #blend .more-bar {
+  text-align: center;
+  width: 100%;
+}
+#main #blend .more-bar > a {
+  display: block;
+  line-height: .3rem;
+  background: #f4f4f4;
+  text-decoration: none;
+  font-size: .13rem;
+  background-image: linear-gradient(#fff, #f4f4f4);
+  margin: .1rem;
+  border: .01rem solid #ddd;
+  border-radius: .04rem;
+}
+#main #blend .agio-title {
+  display: flex;
+  justify-content: space-between;
+  padding: .1rem;
+  background-color: orangered;
+  color: #fff;
+}
+#main #footer {
+  height: 1rem;
+  background-color: #efefef;
+  text-align: center;
+  width: 100%;
+}
+#main #footer .top {
+  height: .4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 0.01rem solid #d5d5d5;
+  border-bottom: 0.01rem solid #d5d5d5;
+}
+#main #footer .top > div {
+  flex: 1;
+  height: 100%;
+  text-align: center;
+  line-height: .4rem;
+  border-right: 0.01rem solid #d5d5d5;
+}
+#main #footer .top > div.backTop img {
+  width: 0.15rem;
+  height: 0.15rem;
+}
+#main #footer .top > div.backTop span {
+  vertical-align: middle;
+}
+#main #footer .bottom {
+  padding: .2rem 0;
+}
+#main #footer .bottom p {
+  margin: 0;
+  height: .16rem;
+}
+#main #footer .bottom p:last-child {
+  font-size: .12rem;
+  height: .13rem;
+}
+#main #footer .bottom p a {
+  padding-right: 0.05rem;
+}
+#main #footer .bottom p span a {
+  color: #f76e6e;
+}
