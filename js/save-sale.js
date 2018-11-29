@@ -8,6 +8,7 @@ var MMB = function(){
 }
 
 MMB.prototype={
+    //渲染商品上半部分
     queryProductDetail:function(){
         var that = this ;
 
@@ -23,6 +24,7 @@ MMB.prototype={
             }
         })
     },
+    //渲染评论
     queryProductComment:function(){
         var that = this ;
 

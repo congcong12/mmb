@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引包 -->
+    <!-- 1.引入mui的css -->
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <!-- 2.引入字体图标的css -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 3. 引入主页的less文件 -->
+    <link rel="stylesheet/less" href="less/category.less">
+    <!-- 4.引入less.js的编译器文件 -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+
+<header id="header">
+    <a class="logo" href="index.html"><img src="images/header_logo.png" alt=""></a>
+    <a class="download" href="#"><img src="images/header_app.png" alt=""></a>
+</header>
+<section id="search">
+    <input type="search" placeholder="请输入您要搜索的商品" id="search-txt" class="mui-input-search">
+    <button type="button" id="search-btn" class="mui-btn">搜索</button>
+</section>
+
+<div class="layout">
+    <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <!--这里放置真实显示的DOM内容-->
+            <main id="main">
+                <section id="categories">
+                    <ul class="main-menu">
+                        <!--<li class="mui-clearfix">
+                            <a href="javascript:;" >
+                                <span class="mui-pull-left">大家电</span>
+                                <i class="fa fa-chevron-down mui-pull-right"></i>
+                            </a>
+                            <ul class="sub-menu">
+                                <li>电视</li>
+                                <li>空调</li>
+                                <li>冰箱</li>
+                                <li>音响</li>
+                            </ul>
+                        </li>-->
+                    </ul>
+                </section>
+
+            </main>
+
+            <footer id="footer">
+                <div class="mui-row footer-nav">
+                    <div class="mui-col-xs-4"><a href="">登陆</a></div>
+                    <div class="mui-col-xs-4"><a href="">注册</a></div>
+                    <div class="mui-col-xs-4"><a href="">返回顶部</a></div>
+                </div>
+                <div class="copyright">
+                    <a href="">手机APP</a>
+                    <a href="">慢慢买手机版 -- 掌上比价平台</a>
+                    <p>m.manmanbuy.com</p>
+                </div>
+            </footer>
+
+            <!--<div id="mask" style="width: 100%; height: 100%; background-color: #fff; z-index: 999; position: absolute; top: 0; left: 0; display: flex; justify-content: center; align-items: center; display: none">
+                <img src="images/loading.gif" alt="">
+            </div>-->
+        </div>
+    </div>
+</div>
+
+
+<script id="categoryTpl" type="text/html">
+    {{each result value }}
+    <li class="mui-clearfix cate-one" data-titleid="{{value.titleId}}">
+        <a href="javascript:;">
+            <span class="mui-pull-left">{{value.title}}</span>
+            <i class="fa fa-chevron-down mui-pull-right"></i>
+        </a>
+        <ul class="sub-menu menu{{value.titleId}}">
+
+        </ul>
+    </li>
+    {{/each}}
+</script>
+
+<script id="subCategoryTpl" type="text/html">
+    {{each result value}}
+    <li data-categoryid="{{value.categoryId}}">{{value.category}}</li>
+    {{/each}}
+</script>
+
+<!-- 5. 引入mui的js -->
+<script src="lib/mui/js/mui.js"></script>
+<script src="js/rem.js"></script>
+<!-- 6.引入模板的js文件 -->
+<script src="lib/artTemplate/template-web.js"></script>
+<!-- 7. 引入zepto的js库-->
+<script src="lib/zepto/zepto.min.js"></script>
+<!-- 8. 引入自己的js文件 -->
+<script src="js/category.js"></script>
+</body>
+
+</html>

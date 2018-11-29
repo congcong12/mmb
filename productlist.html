@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引包 -->
+    <!-- 1.引入mui的css -->
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="lib/mui/css/mui.picker.css">
+    <link rel="stylesheet" href="lib/mui/css/mui.poppicker.css">
+    <!-- 2.引入字体图标的css -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 3. 引入主页的less文件 -->
+    <link rel="stylesheet/less" href="less/productlist.less">
+    <!-- 4.引入less.js的编译器文件 -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+
+<header id="header">
+    <a class="logo" href="index.html"><img src="images/header_logo.png" alt=""></a>
+    <a class="download" href="#"><img src="images/header_app.png" alt=""></a>
+</header>
+<section id="crumbs">
+    <span>
+        <a href="index.html">首页</a> > <a href="category.html">分类</a> > <span class="cate-name"></span>
+    </span>
+    <button type="button">筛选</button>
+</section>
+
+<div class="layout">
+    <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <!--这里放置真实显示的DOM内容-->
+
+            <main id="main">
+                <section id="product-list">
+                    <ul>
+                        <!--<li class="pro-box">
+                            <div class="pro-img mui-col-xs-4">
+                                <img src="http://pro.zuyushop.com:8015/ProPic/20166/Thumb/Thumb_2016060015515937123.png"
+                                     alt="">
+                            </div>
+                            <div class="pro-info mui-col-xs-8">
+                                <h4>乐视TV(Letv)S50 Air全配版2D 50英寸 全高清LED液晶电视</h4>
+                                <p>
+                                    <strong>￥1999.00</strong>
+                                    <span class="mui-pull-right star">
+                                        <img src="images/star.svg" alt="">
+                                        <img src="images/star.svg" alt="">
+                                        <img src="images/star.svg" alt="">
+                                        <img src="images/star.svg" alt="">
+                                        <img src="images/star.svg" alt="">
+                                    </span>
+                                </p>
+                                <p>
+                                    <span>评论(1000)</span>
+                                    <span>报价(6)</span>
+                                </p>
+                            </div>
+                        </li>-->
+                    </ul>
+                </section>
+                <section class="pagination">
+                    <button class="mui-btn mui-btn-primary prev">上一页</button>
+                    <!--<button class="mui-btn mui-btn-primary" id="pagePicker">选择页码</button>-->
+                    <input type="button" class="mui-btn mui-btn-primary" id="pagePicker" value="选择页码">
+                    <button class="mui-btn mui-btn-primary next">下一页</button>
+                </section>
+                <div id='userResult' class="ui-alert"></div>
+            </main>
+
+            <footer id="footer">
+                <div class="mui-row footer-nav">
+                    <div class="mui-col-xs-4 login">登陆</div>
+                    <div class="mui-col-xs-4 register">注册</div>
+                    <div class="mui-col-xs-4 top">返回顶部</div>
+                </div>
+                <div class="copyright">
+                    <a href="">手机APP</a>
+                    <a href="">慢慢买手机版 -- 掌上比价平台</a>
+                    <p>m.manmanbuy.com</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<script id="productListTpl" type="text/html">
+    {{each result value }}
+    <li class="pro-box">
+        <div class="pro-img mui-col-xs-4">
+            {{@ value.productImg}}
+        </div>
+        <div class="pro-info mui-col-xs-8">
+            <h4>{{ value.productName }}</h4>
+            <p>
+                <strong>{{ value.productPrice }}</strong>
+                <span class="mui-pull-right star">
+                    <img src="images/star.svg" alt="">
+                    <img src="images/star.svg" alt="">
+                    <img src="images/star.svg" alt="">
+                    <img src="images/star.svg" alt="">
+                    <img src="images/star.svg" alt="">
+                </span>
+            </p>
+            <p>
+                <span>{{ value.productCom }}</span>
+                <span>{{ value.productQuote }}</span>
+            </p>
+        </div>
+    </li>
+    {{/each}}
+</script>
+
+<!-- 5. 引入mui的js -->
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/mui/js/mui.picker.js"></script>
+<script src="lib/mui/js/mui.poppicker.js"></script>
+<script src="js/rem.js"></script>
+<!-- 6.引入模板的js文件 -->
+<script src="lib/artTemplate/template-web.js"></script>
+<!-- 7. 引入zepto的js库-->
+<script src="lib/zepto/zepto.min.js"></script>
+<!-- 8. 引入自己的js文件 -->
+<script src="js/productlist.js"></script>
+</body>
+
+</html>
