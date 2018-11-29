@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>凑单品页面</title>
+    <!-- 1.引入mui的css -->
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <!-- 2.引入字体图标的css -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 3. 引入主页的less文件 -->
+    <link rel="stylesheet/less" href="less/gsproduct.less">
+    <!-- 4.引入less.js的编译器文件 -->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="javascript:history.back();" class="icon-left">
+            <i class="fa fa-chevron-left icon-left"></i>
+        </a>
+        <h1 class="gather-product">凑单品</h1>
+        <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.manmanbuy.bijia" class="appxiazai"></a>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <!-- 区域滚动 -->
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!-- 城市分类过滤区域 -->
+                <section class="coudan_filter">
+                    <!-- 左边的过滤 -->
+                    <div class="coudan_filter-left br">
+                        <a href="#" class="filter-shop" data-sort-type ="shop" data-id="0">
+                            <i class="shop-list">京东</i>
+                            <span class="caret" data-direction="1"></span>
+                        </a>
+                        <a href="#" class="filter-area" data-sort-type ="area" data-id="0">
+                            <i class="shop-list">华北</i>
+                            <span class="caret" data-direction="1"></span>
+                        </a>
+                        <a href="#" class="filter-price" data-sort-type ="price" data-id="0">
+                            <i class="shop-list">1元</i>
+                            <span class="caret" data-direction="1"></span>
+                        </a>
+                    </div>
+                    <!-- 右边的图片 -->
+                    <div class="coudan_filter-right">
+                        <a href="#">
+                            <i class="search"></i>
+                        </a>
+                    </div>
+                </section>
+                <!-- 遮罩层页面 -->
+                <section class="mask ">
+                    <!-- <ul class="shop"> -->
+                    <!-- <li>
+                            <a href="#"><span>京东</span><span class="fa fa-check"></span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>一号店</span></span><span></span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span>天猫超市</span><span></span></a>
+                        </li> -->
+                    <!-- </ul>
+                    <ul class="area"></ul> -->
+                    <!-- <ul class="price">
+                        <li>
+                         <a href="#" data-id=""><span>1元</span><span class="gou fa fa-check"></span></a>
+                        </li>
+                 </ul> -->
+                </section>
+                <!-- 产品区域 -->
+                <section class="coudan_product">
+                    <ul class="product-list mui-row">
+
+                      
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+    </main>
+    <!-- 遮罩层的渲染模板 -->
+    <!-- 商品店铺的模板 -->
+    <script id="shopTpl" type="text/html">
+        <ul>
+        <% for(var i=0;i< result.length;i++){ %>
+                <li data-shopId="<%= result[i].shopId %>">
+                    <a href="#"><span class="productName"><%= result[i].shopName %></span><span class="gou"></span></a>
+                </li>
+        <% } %>
+    </ul>
+    </script>
+    <!-- 请求华北的数据 -->
+    <script id="areaTpl" type="text/html">
+        <ul>
+        <% for(var i=0;i< result.length;i++){ %>
+                <li data-areaId="<%= result[i].areaId %>">
+                    <a href="#"><span  class="productName"><%= result[i].areaName %></span><span class="gou <%= i==0?'fa fa-check':'' %>"></span></a>
+                </li>
+        <% } %>
+    </ul>
+    </script>
+     <!-- 渲染商品页面 -->
+     <script id="productListTpl" type="text/html">
+        {{ each result value}}
+        <li class="mui-col-xs-6">
+            <a href="https://item.m.jd.com/ware/view.action?wareId=1274360">
+                <img src="{{value.productImg}}" alt="">
+                <p class="content">{{value.productName}}</p>
+                <p class="other">
+                    <span class="price">{{value.productPrice}}</span>
+                    <button class="btn-coudan" type="button" data-id = "{{value.productId}}">去凑单</button>
+                </p>
+
+            </a>
+        </li>
+        {{ /each }}
+    </script>
+    <!--  引入mui的js -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!--  引入模板的js文件 -->
+    <script src="lib/artTemplate/template-web.js"></script>
+    <!--  引入zepto的js库-->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!--  引入自己的js文件 -->
+    <!-- 引入凑单品的js -->
+    <script src="js/gsproduct.js"></script>
+</body>
+
+</html>

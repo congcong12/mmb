@@ -4,6 +4,7 @@ html {
 body {
   font-size: 0.14rem;
   padding-top: 0.45rem;
+  padding-bottom: 1rem;
 }
 img {
   vertical-align: middle;
@@ -22,9 +23,58 @@ body {
   background: #fff;
 }
 main {
-  height: 100%;
   overflow: hidden;
+}
+.layout {
   position: relative;
+  height: 100%;
+}
+#search {
+  height: .45rem;
+  display: flex;
+  justify-content: space-between;
+  padding: .1rem;
+  position: fixed;
+  width: 100%;
+  top: .45rem;
+  background-color: #fff;
+}
+#search #search-txt {
+  height: .3rem;
+  border-radius: .15rem;
+  text-align: left;
+  margin-bottom: 0;
+  font-size: 0.14rem;
+}
+#search #search-btn {
+  height: .3rem;
+  border-radius: .15rem;
+  background-color: #ff4e49;
+  color: #fff;
+  margin-left: .1rem;
+  border: none;
+}
+#crumbs {
+  height: .45rem;
+  line-height: .45rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .1rem;
+  position: fixed;
+  width: 100%;
+  top: .45rem;
+  background: linear-gradient(to bottom, #fff, #ddd);
+}
+#crumbs button {
+  height: .3rem;
+  padding: 0 .1rem;
+  line-height: .3rem;
+  margin-top: .1rem;
+  border-radius: .05rem;
+  background: linear-gradient(to top, #fff, #ddd);
+  display: inline-block;
+  float: right;
+  box-shadow: 0px 0px 1px #AAAAAA, 0px 1px 1px #AAAAAA;
 }
 #header {
   display: flex;
@@ -34,7 +84,9 @@ main {
   left: 0;
   width: 100%;
   z-index: 999;
-  background: #ff841d;
+  justify-content: space-between;
+  align-items: center;
+  background: #ff4e49;
 }
 #header > .fa-angle-left {
   width: 0.45rem;
@@ -58,9 +110,15 @@ main {
   width: 0.45rem;
   height: 0.45rem;
   display: block;
-  background: url(../images/header_app.png);
-  background-size: cover;
-  margin-right: 0.1rem;
+  background: url(../images/header_app.png) no-repeat center center;
+  background-size: .34rem .34rem;
+  margin-right: .1rem;
+}
+#header .logo img {
+  width: 1.85rem;
+}
+#header .download img {
+  width: 0.34rem;
 }
 #footer {
   background: #efefef;
@@ -97,4 +155,29 @@ main {
 }
 #footer .foot-connect p span.phone {
   color: #000;
+}
+.footer-bottom {
+  margin-bottom: .1rem;
+  text-align: center;
+  height: 0.36rem;
+  display: flex;
+}
+.footer-bottom .f33 {
+  flex: 1;
+  text-align: center;
+}
+.footer-bottom .f33 > a {
+  width: .82rem;
+  display: block;
+  height: 0.36rem;
+  margin: 0 auto;
+  line-height: 0.36rem;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#f1f1f1), to(#d4d4d4));
+  color: #000;
+  border-radius: 0.05rem;
+}
+.footer-bottom .f33 > #select {
+  width: 0.95rem;
+  height: 0.36rem;
+  padding: 0.08rem 0.25rem;
 }

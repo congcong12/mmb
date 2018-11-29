@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>省钱控</title>
-    <link rel="stylesheet" type="text/css" href="lib/mui/css/mui.css">
+    <link rel="stylesheet" type="text/css" href="lib/mui/css/mui.min.css">
     <link rel="stylesheet" type="text/css" href="lib/fontAwesome/css/font-awesome.css">
     <link rel="stylesheet/less" href="less/moneyctrl.less">
     <script src="lib/less/less.js"></script>
@@ -13,65 +13,61 @@
 
 <body>
     <header id="header">
-        <a href="#" class="fa fa-angle-left"></a>
+        <a href="javascript:history.back()" class="fa fa-angle-left"></a>
         <h4 class="h4-text">省钱控-最新优惠</h4>
         <a href="#" class="header-app"></a>
     </header>
     <main id="main">
-        <div class="mui-scroll-wrapper">
-            <div class="mui-scroll">
-                <div class="content">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <div class="product-left">
+        <div class="content">
+            <ul>
+                <li>
+                    <a href="#">
+                        <div class="product-left">
 
-                                </div>
-                                <div class="product-right">
-                                    <p class="product-name">
+                        </div>
+                        <div class="product-right">
+                            <p class="product-name">
 
-                                        <span></span>
-                                    </p>
-                                    <div class="product-from">
+                                <span></span>
+                            </p>
+                            <div class="product-from">
 
-                                        <i class="icon-common"></i>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-bottom">
-                    <span class="f33"><a href="#" class="btn1">上一页</a></span>
-                    <span class="f33">
-                        <select name="#" id="select">
-                         
-                        </select>
-                    </span>
-                    <span class="f33"><a href="#" class="btn2">下一页</a></span>
-                </div>
-                <footer id="footer">
-                    <div class="mui-content">
-                        <div class="mui-row">
-                            <div class="mui-col-xs-4">
-                                <a href="#">登录</a>
-                            </div>
-                            <div class="mui-col-xs-4">
-                                <a href="#">注册</a>
-                            </div>
-                            <div class="mui-col-xs-4 goTop">
-                                <a href="#">返回顶部</a>
+                                <i class="icon-common"></i>
                             </div>
                         </div>
-                    </div>
-                    <div class="foot-connect">
-                        <p class="appLoad">手机APP下载 <span class="phone">慢慢买手机版</span> <span>-- 掌上比价平台</span></p>
-                        <p class="location">m.manmanbuy.com</p>
-                    </div>
-                </footer>
-            </div>   
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <span class="f33"><a href="#" class="btn1">上一页</a></span>
+            <span class="f33">
+                <select name="#" id="select">
+
+                </select>
+            </span>
+            <span class="f33"><a href="#" class="btn2">下一页</a></span>
         </div>
     </main>
+    <footer id="footer">
+        <div class="mui-content">
+            <div class="mui-row">
+                <div class="mui-col-xs-4">
+                    <a href="#">登录</a>
+                </div>
+                <div class="mui-col-xs-4">
+                    <a href="#">注册</a>
+                </div>
+                <div class="mui-col-xs-4 goTop">
+                    <a href="#">返回顶部</a>
+                </div>
+            </div>
+        </div>
+        <div class="foot-connect">
+            <p class="appLoad">手机APP下载 <span class="phone">慢慢买手机版</span> <span>-- 掌上比价平台</span></p>
+            <p class="location">m.manmanbuy.com</p>
+        </div>
+    </footer>
     <script id="productTpl" type="text/html">
         {{each result value}}
             <li>

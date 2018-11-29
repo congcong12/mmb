@@ -4,6 +4,7 @@ html {
 body {
   font-size: 0.14rem;
   padding-top: 0.45rem;
+  padding-bottom: 1rem;
 }
 img {
   vertical-align: middle;
@@ -24,7 +25,6 @@ body {
 main {
   height: 100%;
   overflow: hidden;
-  position: relative;
 }
 #header {
   display: flex;
@@ -65,6 +65,11 @@ main {
 #footer {
   background: #efefef;
   height: 1rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 #footer .mui-row {
   height: .3rem;
@@ -155,5 +160,5 @@ main {
 #main .footer-bottom .f33 > #select {
   width: 0.95rem;
   height: 0.36rem;
-  padding: 0.08rem 0.32rem;
+  padding: 0.08rem 0.25rem;
 }
