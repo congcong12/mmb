@@ -189,9 +189,40 @@ body {
   bottom: 0;
   width: 100%;
 }
+#main {
+  padding: .1rem;
+}
+#main input {
+  float: left;
+}
 #main .btnLoading {
   padding: 0.2rem 0.1rem;
 }
 #main .btnLoading .btn {
   width: 100%;
+}
+#main .code {
+  padding: 0.05rem 0.05rem;
+  height: .48rem;
+  width: 100%;
+}
+#main .code .codeNum {
+  float: left;
+  width: .66rem;
+  height: .38rem;
+  text-align: center;
+  line-height: .38rem;
+}
+#main .code .putCodeNum {
+  float: left;
+  width: 1rem;
+  height: .36rem;
+  border: 1px solid #ccc;
+}
+#main .code .havePhoneCode {
+  float: left;
+  width: 1.98rem;
+  height: .36rem;
+  display: block;
+  margin-left: .2rem;
 }
