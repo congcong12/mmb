@@ -1,9 +1,11 @@
 html {
   font-size: 100px;
+  height: 100%;
 }
 body {
   font-size: 0.14rem;
-  padding-top: 0.45rem;
+  padding-top: 0.9rem;
+  height: 100%;
 }
 img {
   vertical-align: middle;

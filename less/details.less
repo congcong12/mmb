@@ -1,0 +1,121 @@
+//中部代码
+#scroll-box {
+    position: relative;
+    height: 100%;
+    .mui-scroll-wrapper {
+        .mui-scroll{
+            #main {
+                .details {
+                    text-align: center;
+                    .describe {
+                        text-align: left;
+                        padding: 0.2rem 0.2rem 0;
+                        margin:0; 
+                    }
+                    .product {
+                        width: 1.7rem;
+                    }
+                    .like {
+                        width: 0.5rem;
+                    }
+                    .details-nav {
+                        border-top: 1px solid #c14d00;
+                        border-bottom: 1px solid #c14d00;
+                        margin-top: 0.2rem;
+                        display: flex;
+                        >a {
+                            flex:1;
+                            text-align: center;
+                            line-height: 0.3rem;
+                            background-color: #ffc627;
+                            font-size: 0.14rem;
+                            color: #fff;
+                            &:nth-child(n+2) {
+                                border-left: 1px solid #c14d00;
+                            }
+                            &:nth-child(1){
+                                background-color: #ffa025
+                            }
+                        }
+                    }
+                    .price {
+                        border-bottom: 2px solid #ccc;
+                        
+                        table {
+                            height: 0.4rem;
+                            line-height: 0.4rem;
+                            border-collapse: collapse;
+                            tbody {
+                                
+                                font-size: 0.14rem;
+                                tr {
+                                    padding: 0 0.1rem;
+                                    td {
+                                        >a {
+                                            color: #000;
+                                        }
+                                        display: table-cell;
+                                        text-align: center;
+                                        &.p_pic {
+                                            text-align: center;
+                                            line-height: 0.4rem;
+                                        }
+                                        &.red {
+                                            text-align: right;
+                                            border-spacing: 0.02rem;
+                                            color:#e92322;
+                                        }
+                                        &:nth-child(2) {
+                                            text-align: left;
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .hint {
+                    color: #888888;
+                    font-size: 0.12rem;
+                    padding: 0.08rem;
+                    border-bottom: #888888 0.03rem solid;  
+                }
+                .evaluate {
+                    .title {
+                        background: #ccc;
+                        text-align: center;
+                        line-height: 0.4rem;
+                        
+                        font-size: 0.14rem;
+                    }
+                    ul {
+                        padding: 0.1rem;
+                        li {
+                            border-bottom: 1px solid #bbb;
+                            &:last-child {
+                                border: none;   
+                            }
+                            .userInfo {
+                                display: flex;
+                                justify-content: space-between;
+                                // line-height: 0.3rem;
+                                margin: 0;
+                            }
+                            .star {
+                                color: #666;
+                                display: flex;
+                                justify-content: space-between;
+                                font-size: 0.12rem; 
+                                img {
+                                    width: 0.18rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+       
+        }
+    }
+}
