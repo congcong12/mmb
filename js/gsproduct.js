@@ -1,4 +1,3 @@
-
 //封装版
 $(function () {
     var manmanBuy = new Manmanbuy();
@@ -6,6 +5,7 @@ $(function () {
     manmanBuy.scrollWrapper();
     manmanBuy.directionProduct();
     manmanBuy.addInvoices();
+    manmanBuy.preventThorough();
 
 });
 
@@ -21,7 +21,7 @@ Manmanbuy.prototype = {
     //商店的li单击的id
     shopCid: 0,
     areaCid: 0,
-    num:1,
+    num: 1,
 
     //请求渲染商品页面的函数
     queryProduct: function () {
@@ -64,8 +64,8 @@ Manmanbuy.prototype = {
             var num = $(this).data("id");
             // console.log(num);
             // console.log(that);
-            num++;     
-            $(this).data("id",num);   
+            num++;
+            $(this).data("id", num);
             var sortType = $(this).data("sort-type");
             // console.log(sortType);
             // 获取三角形的方向
@@ -97,12 +97,12 @@ Manmanbuy.prototype = {
                     dataType: "json",
                     success: function (data) {
                         // $(".mask").show();
-                        if (num %2 ==0){
+                        if (num % 2 == 0) {
                             $(".mask").hide();
-                           
-                        }else {
+
+                        } else {
                             $(".mask").show();
-                        }            
+                        }
                         // console.log(data);
                         //渲染下拉列表
                         var html = template("shopTpl", data);
@@ -117,7 +117,7 @@ Manmanbuy.prototype = {
                         $(".mask li").on("tap", function () {
                             //记录单击的是哪个li
                             that.shopCid = $(this).index();
-                            
+
                             // 当点击的时候显示√;
                             $(this).find(".gou").addClass("fa fa-check");
                             $(this).siblings().find(".gou").removeClass("fa fa-check");
@@ -156,23 +156,23 @@ Manmanbuy.prototype = {
                     url: "http://localhost:9090/api/getgsshoparea",
                     dataType: "json",
                     success: function (data) {
-                        if (num %2 ==0){
+                        if (num % 2 == 0) {
                             $(".mask").hide();
-                        }else {
+                        } else {
                             $(".mask").show();
                         }
 
                         //渲染下拉列表
                         var html = template("areaTpl", data);
                         $(".mask").html(html);
-                          //赋值id给前面点击的那个 渲染√
-                          $(".mask li").eq(that.areaCid).find(".gou").addClass("fa fa-check");
-                          $(".mask li").eq(that.areaCid).siblings().find(".gou").removeClass("fa fa-check");
+                        //赋值id给前面点击的那个 渲染√
+                        $(".mask li").eq(that.areaCid).find(".gou").addClass("fa fa-check");
+                        $(".mask li").eq(that.areaCid).siblings().find(".gou").removeClass("fa fa-check");
 
                         $(".mask  li").on("tap", function () {
                             that.areaCid = $(this).index();
                             // console.log(that.areaCid);
-                            
+
                             // 当点击的时候显示√;
                             $(this).find(".gou").addClass("fa fa-check");
                             $(this).siblings().find(".gou").removeClass("fa fa-check");
@@ -199,12 +199,12 @@ Manmanbuy.prototype = {
                     }
                 })
             } else if (sortType == "price") {
-                if (num %2 ==0){
+                if (num % 2 == 0) {
                     $(".mask").hide();
-                   
-                }else {
+
+                } else {
                     $(".mask").show();
-                }   
+                }
                 var ul = document.createElement("ul");
                 ul.innerHTML = '<li><a href="#" data-id="0"><span>' + '1元' + '</span><span class="gou fa fa-check"></span></a></li>';
                 $(".mask").html(ul);
@@ -230,8 +230,22 @@ Manmanbuy.prototype = {
     addInvoices: function () {
         $(".coudan_product").on("tap", ".btn-coudan", function () {
             var id = $(this).data("id");
-            location = "https://item.m.jd.com/ware/view.action?wareId=" + id;
+            location = "https://item.m.jd.com/ware/view.action?wareId=1274360";
             // console.log(id);
         })
+    },
+    // 阻止a的点透事件
+    preventThorough: function () {
+        //阻止a标签的默认跳转--再给其添加tap事件
+        $('.product-list').on('click', 'li a', function (e) {
+            e.preventDefault();
+        });
+
+        //解决点透问题
+        mui(document).on('tap', 'a', function () {
+            var a = document.createElement('a');
+            a = this.cloneNode(true);
+            a.click();
+        });
     }
 }
