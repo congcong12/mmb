@@ -1,0 +1,262 @@
+@main-color: #ff8e59;
+@border-color: #d5d5d5;
+html {
+    font-size: 100px;
+}
+
+body {
+    font-size: 0.14rem;
+    background-color: #f1f1f1;
+    padding-top: .44rem;
+}
+
+img {
+    vertical-align: middle;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-weight: normal;
+    line-height: 0;
+    margin: 0;
+}
+
+input {
+    border: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#main {
+    height: 100%; // width: 100%;
+    overflow: hidden;
+    /* 注意还要给main加一个相对定位 因为里面的mui-scroll-wrapper设置了绝对定位 */
+    position: relative;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #696969;
+    text-decoration: none;
+}
+
+// 公共样式
+.bb() {
+    border-bottom: .01rem solid @border-color;
+}
+
+.bt() {
+    border-top: .01rem solid @border-color;
+}
+
+.br() {
+    border-right: .01rem solid @border-color;
+}
+
+.bl() {
+    border-left: .01rem solid @border-color;
+}
+
+.title() {
+    display: flex;
+    justify-content: space-between;
+    padding: .1rem;
+    background-color: orangered;
+    color: #fff;
+}
+
+// 头部区域
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: 0.09rem 0.1rem;
+    height: .44rem;
+    width: 100%;
+    background-color: #fff;
+    .bb();
+    .logo {
+        width: 27%;
+        a {
+            display: block;
+            img {
+                max-width: 100%;
+                max-height: .24rem;
+            }
+        }
+    }
+    form {
+        flex: 1;
+        position: relative;
+        i {
+            position: absolute;
+            left: 0.1rem;
+            top: 0.05rem;
+            color: #cecece;
+            font-weight: normal;
+        }
+        input {
+            width: 95%;
+            height: 0.25rem;
+            border-radius: 0.12rem;
+            background-color: #f9f9f9;
+        }
+    }
+    .download {
+        width: .36rem;
+        height: 0.2rem;
+        border: 1px solid @main-color;
+        border-radius: 0.1rem;
+        margin-top: .03rem;
+        a {
+            display: block;
+            width: 100%;
+            height: .2rem;
+            text-align: center;
+            color: @main-color;
+            line-height: 0.2rem;
+            font-size: .12rem;
+        }
+    }
+}
+
+#main {
+    #nav {
+        min-height: 1.64rem;
+        background-color: #fff;
+        border-top: .01rem solid @border-color;
+        .mui-row {
+            text-align: center;
+            padding: .05rem;
+            a {
+                img {
+                    width: 50%;
+                }
+                p {
+                    margin-top: .05rem;
+                    font-size: .12rem;
+                    color: #000;
+                }
+            }
+        }
+    }
+    #agio {
+        min-height: 9.66rem;
+        margin-top: .05rem;
+        .agio-title {
+            .title();
+        }
+        .content {
+            ul {
+                background-color: #fff;
+                li {
+                    border-bottom: .01rem solid @border-color;
+                    padding: .05rem;
+                    a {
+                        display: flex;
+                        color: #8f8f94;
+                        .left {
+                            width: 120px;
+                            img {
+                                width: 106px;
+                            }
+                        }
+                        .right {
+                            flex: 1;
+                            .product-name {
+                                span {
+                                    color: red;
+                                }
+                            }
+                            .product-from {
+                                display: flex;
+                                justify-content: space-between;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #blend {
+        // min-height: .83rem;
+        .more-bar {
+            text-align: center;
+            width: 100%;
+            >a {
+                display: block;
+                line-height: .3rem;
+                background: #f4f4f4;
+                text-decoration: none;
+                font-size: .13rem;
+                background-image: linear-gradient(#fff, #f4f4f4);
+                margin: .1rem;
+                border: .01rem solid #ddd;
+                border-radius: .04rem;
+            }
+        }
+        .agio-title {
+            .title();
+        }
+    } // 底部
+    #footer {
+        height: 1rem;
+        background-color: #efefef;
+        text-align: center;
+        width: 100%;
+        .top {
+            height: .4rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            .bt();
+            .bb();
+            >div {
+                flex: 1;
+                height: 100%;
+                text-align: center;
+                line-height: .4rem;
+                .br();
+                &.backTop {
+                    img {
+                        width: 0.15rem;
+                        height: 0.15rem;
+                    }
+                    span {
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+        .bottom {
+            padding: .2rem 0;
+            p {
+                margin: 0;
+                height: .16rem;
+                &:last-child {
+                    font-size: .12rem;
+                    height: .13rem;
+                }
+                a {
+                    padding-right: 0.05rem;
+                }
+                span {
+                    a {
+                        color: #f76e6e;
+                    }
+                }
+            }
+        }
+    }
+}
