@@ -1,0 +1,87 @@
+@import "base-su.less";
+#main {
+    .detail-show {
+        padding: .15rem;
+        .top {
+            margin-bottom: .2rem;
+            h4 {
+                color: #333;
+                margin: .05rem auto;
+                line-height: .26rem;
+                word-break: break-all;
+            }
+            p {
+                &.price {
+                    color: @span-color;
+                    font-size: .16rem;
+                }
+            }
+            span {
+                font-size: .12rem;
+                color: #666;
+            }
+        }
+        .middle {
+            p {
+                font-size: .16rem;
+                line-height: .24rem;
+                color: #606060;
+            }
+            .pic-x {
+                float: right;
+                width: 1.2rem;
+                height: 1.2rem;
+                img {
+                    width: 100%;
+                }
+            }
+            >img {
+                max-width: 100%;
+            }
+            .goBuy {
+                display: block;
+                margin: .5rem auto;
+                border-radius: .05rem;
+                width: 90%;
+                height: .3rem;
+                text-align: center;
+                background: @span-color;
+                color: #fff;
+                line-height: .3rem;
+                font-size: .14rem;
+            }
+            .mmbweixin {
+                max-width: 100%;
+            }
+        }
+        .bottom {
+            margin-top: .2rem; 
+            .tit {
+                font-size: .16rem;
+                padding: .06rem .08rem;
+            }
+            .form {
+                border: .02rem solid #f0efed;
+                position: relative;
+                textarea {
+                    margin-bottom: 0;
+                    border: .01rem solid #eceae8;
+                    border-radius: 0;
+                }
+                .ctrl {
+                    width: 100%;
+                    text-align: right;
+                    margin-top: -4px;
+                    input {
+                        background: @span-color;
+                        color: #fff;
+                        font-size: .16rem;
+                        border: 0;
+                        width: 1rem;
+                        height: .4rem;
+                    }
+                }
+            }
+        }
+    }
+}

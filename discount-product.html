@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>国内折扣详情页面</title>
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet/less" href="less/discount-product.less">
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="javascript:history.back();" class="fa fa-angle-left"></a>
+        <h4>国内折扣</h4>
+        <a href="#" class="fa fa-download"></a>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="detail-show">
+            <div class="top">
+                <h4 class="title"> 西门子（SIEMENS）SC73M810TI洗碗机 嵌入式 西班牙原装进口 </h4>
+                <p class="price">4649元(4699-50)</p>
+                <span class="from">国美在线</span>
+                <span class="time">10-22 13:08</span>
+                <span class="tips">chenjin / 慢慢买</span>
+            </div>
+            <div class="middle">
+                <img class="pic-x" src="images/gengduo.png" alt="">
+                <p>这款型号为SC73M810TI 的产品，只能放下8套标准餐具，但是人家是紧凑型产品，高度仅有595mm，标准的洗涤程序费水8.7L，
+                    1度电，3个不同的程序，不同的洗涤要求；中式碗篮，各种餐具，轻松放入。智能水系统，高温除菌烘干，洁净温暖碗碟，嵌入
+                    式设计，经典60*60cm 尺寸，灵活安装。国美在线目前报价4699元，可在页面价格下方领取满800-50优惠券，券后实付4649元包邮到手，历史低价，同款1号店卖5199元。</p>
+                <img class="product-img" src="http://img1.gomein.net.cn/image/prodimg/production_image/201408/01/1121810228/1000667458_800.jpg"
+                    alt="">
+                <a href="#" class="goBuy">前往购买</a>
+                <img class="mmbweixin" src="images/mmbweixin.png" alt="">
+            </div>
+            <div class="bottom">
+                <p>发表评论</p>
+                <div class="form">
+                    <textarea name="" cols="30" rows="5"></textarea>
+                    <button type="button" class="comment">发表评论</button>
+                </div>
+                <p>最新评论</p>
+            </div>
+        </div>
+    </main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="title">
+            <div class="mui-row">
+                <div class="mui-col-xs-4">
+                    <a href="#">登录</a>
+                </div>
+                <div class="mui-col-xs-4">
+                    <a href="#">注册</a>
+                </div>
+                <div class="mui-col-xs-4">
+                    <a href="#"><i class="fa fa-angle-double-up"></i> 返回顶部</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <p>
+                <a href="#" class="app">手机APP下载</a>
+                <a href="#" class="mobile">慢慢买手机版 -- 掌上比价平台</a>
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+    <script>
+        // rem适配
+        setNowFontSize();
+
+        function setNowFontSize() {
+            var StandardWidth = 375;
+            var StandardFontSize = 100;
+            var nowWidth = document.documentElement.offsetWidth;
+            var nowFontSize = nowWidth / StandardWidth * StandardFontSize;
+            console.log(nowWidth);
+            console.log(nowFontSize);
+            document.documentElement.style.fontSize = nowFontSize + 'px';
+        }
+        window.addEventListener('resize', setNowFontSize);
+    </script>
+    <script id="discountProductTpl" type="text/html">
+        {{each result value}}
+            <div class="top">
+                <h4 class="title">{{value.productName}}</h4>
+                <p class="price">{{value.productPrice}}</p>
+                <span class="from">{{value.productFrom}}</span>
+                <span class="time">{{value.productTime}}</span>
+                <span class="tips">{{value.productTips}}</span>
+            </div>
+            <div class="middle">
+                <div class="pic-x">
+                    {{@value.productImg}}
+                </div>
+                <p>{{value.productInfo}}</p>
+                {{@value.productImg}}
+                <a href="#" class="goBuy">前往购买</a>
+                <div><img class="mmbweixin" src="images/mmbweixin.png" alt=""></div>
+            </div>
+            <div class="bottom">
+            {{@value.productComment}}
+            </div>
+        {{/each}}
+    </script>
+    <script src="lib/mui/js/mui.js"></script>
+    <script src="lib/zepto/zepto.min.js"></script>
+    <script src="lib/artTemplate/template-web.js"></script>
+    <script src="js/discount-product.js"></script>
+</body>
+
+</html>

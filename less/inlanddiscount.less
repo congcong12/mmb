@@ -1,0 +1,45 @@
+@import "base-su.less";
+// 主体区域
+#main {
+    .product-list {
+        .mui-row {
+            a {
+                text-align: center;
+                display: block;
+                box-shadow: 0 0 .01rem gray;
+                padding: .1rem;
+                .pic {
+                    width: 100%;
+                    height: 1.4rem;
+                    img {
+                        width: 1.4rem;
+                    }
+                }
+                p {
+                    text-align: left;
+                    /* 超出隐藏 */
+                    overflow: hidden;
+                    /* 文本超出显示... */
+                    text-overflow: ellipsis;
+                    /* CSS盒模型必须设置 */
+                    display: -webkit-box;
+                    /* 定义子元素的排列方向 垂直方向 */
+                    -webkit-box-orient: vertical;
+                    /* 垂直方向 定义子元素排列的函数 */
+                    -webkit-line-clamp: 2;
+                    &.title {
+                        color: #333;
+                        height: .4rem;
+                    }
+                    &.sub-title {
+                        color: @span-color;
+                        height: .36rem;
+                    }
+                    &.info {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
