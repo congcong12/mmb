@@ -54,10 +54,10 @@
         <div class="title">
             <div class="mui-row">
                 <div class="mui-col-xs-4">
-                    <a href="#">登录</a>
+                    <a href="login.html">登录</a>
                 </div>
                 <div class="mui-col-xs-4">
-                    <a href="#">注册</a>
+                    <a href="register.html">注册</a>
                 </div>
                 <div class="mui-col-xs-4">
                     <a href="#"><i class="fa fa-angle-double-up"></i> 返回顶部</a>
@@ -80,8 +80,6 @@
             var StandardFontSize = 100;
             var nowWidth = document.documentElement.offsetWidth;
             var nowFontSize = nowWidth / StandardWidth * StandardFontSize;
-            console.log(nowWidth);
-            console.log(nowFontSize);
             document.documentElement.style.fontSize = nowFontSize + 'px';
         }
         window.addEventListener('resize', setNowFontSize);
