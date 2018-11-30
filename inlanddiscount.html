@@ -66,8 +66,6 @@
             var StandardFontSize = 100;
             var nowWidth = document.documentElement.offsetWidth;
             var nowFontSize = nowWidth / StandardWidth * StandardFontSize;
-            console.log(nowWidth);
-            console.log(nowFontSize);
             document.documentElement.style.fontSize = nowFontSize + 'px';
         }
         window.addEventListener('resize', setNowFontSize);
