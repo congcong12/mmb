@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优惠券</title>
+    <!-- mui样式文件 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 字体图标样式文件 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 优惠券页面样式文件 -->
+    <link rel="stylesheet/less" href="./less/Coupon.less">
+    <!-- less编译器文件 -->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <a href="index.html" class="fa fa-angle-left back">
+        </a>
+        <h4>优惠券</h4>
+        <a href="#" class="appdown">
+            <img src="./images/header_app.png" alt="">
+        </a>
+    </header>
+
+    <nav id="nav">
+        <ul id="coupon-list">
+        </ul>
+    </nav>
+
+
+   
+
+    <!-- 优惠券标题模板 -->
+    <script id="getCoupeTpl" type="text/html">
+        {{each result value}}
+        <li>
+            <a href="couponproduct.html?couponid={{value.couponId}}&couponTitle={{value.couponTitle}}">
+                 <img src="{{value.couponImg}}" alt="">
+                 <p>{{value.couponTitle}}</p>
+             </a>
+            </li>
+        {{/each}}
+        <div class="navbar">
+                <a href="index.html">
+                    首页&nbsp>&nbsp
+                </a>
+                <a href="Coupon.html">
+                    优惠券
+                </a>
+            </div>
+        
+            <footer id="footer">
+                <div class="footer-top">
+                    <a href="#">
+                        登陆
+                    </a>
+                    <a href="#">
+                        注册
+                    </a>
+                    <a href="#">
+                        <img src="./images/top.png" alt="">
+                        返回顶部
+                    </a>
+                </div>
+                <div class="footer-end">
+                    <p>
+                        <a href="#">
+                            手机APP下载
+                        </a>
+                        <a href="#">
+                            慢慢买手机版 -- 掌上比价平台
+                        </a>
+                    </p>
+                    <p>m.manmanbuy.com</p>
+                </div>
+            </footer>
+    </script>
+    <!-- mui的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- zepto js文件 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 模板引擎文件 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 优惠券js -->
+    <script src="./js/Coupe.js"></script>
+    <script src="./js/rem.js"></script>
+
+</body>
+
+</html>
