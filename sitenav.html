@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商城导航</title>
+    
+    <!-- 字体图库-css -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- mui-css -->
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <!-- 样式 -->
+    <link rel="stylesheet/less" href="less/sitenav.less">
+    <script src="lib/less/less.js"></script>
+    
+    <!-- rem适配 -->
+    <script>
+            setNowFontSize();
+            function setNowFontSize() {
+                // 根元素计算公式
+                // 已知默认根元素大小100px  已知标准屏幕是375px   
+                // 当前屏幕根元素的字体大小 =  已知默认根元素大小100px 已知标准屏幕是375px       当前屏幕大小
+                // 当前屏幕 / 标准屏幕 ==   当前根元素字体 / 标准根元素字体
+                // 750 / 375 ==   x / 100
+                // 750 / 375 * 100 == x
+                // 当前字体 =  当前屏幕 / 标准屏幕 * 标准屏幕根元素大小
+                var StandardWidth = 375;
+                var StandardFontSize = 100;
+                var nowWidth = document.documentElement.offsetWidth;
+                var nowFontSize = nowWidth / StandardWidth * StandardFontSize;
+                console.log(nowWidth);
+                console.log(nowFontSize);
+                // 把计算好的nowFontSize设置给当前屏幕的根元素 注意要带px单位
+                document.documentElement.style.fontSize = nowFontSize + 'px';
+            }
+            window.addEventListener('resize', setNowFontSize);
+            </script>
+
+ 
+</head>
+<body>
+    <!-- 顶部区域 -->
+    <header id="header" class="bb">
+        <a class="icon-back" href="index.html"><</a>
+        <div class="title">
+            <h4>商场导航</h4>
+        </div>
+        <div class="appdown">
+            <a class="icon-appdown" href="#">
+                <img src="images/header_app.png" alt="">
+            </a>
+        </div>
+
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+           
+           
+    </main>
+
+    <!-- 底部导航 -->
+    <section id="footnav" class="bb bt">
+        <span>
+            <a href="index.html">首页</a>
+            <span>>商场导航</span>
+        </span>
+    </section>
+    <!-- 底部区域 -->
+    <footer id="footer">
+            <div class="top">
+                <div class="login"><a href="#">登录</a></div>
+                <div class="register"><a href="#">注册</a></div>
+                <div class="backTop"><a href="#">
+                        <img src="http://www.zuyushop.com/wap/images/top.jpg" alt="">
+                        <span> 返回顶部</span>
+                    </a> </div>
+            </div>
+            <div class="bottom">
+                <p><span><a href="#">手机APP下载</a></span><a href="#">慢慢买手机版 --</a><a href="#">掌上比价平台</a></p>
+                <p>m.manmanbuy.com</p>
+            </div>
+    
+        </footer>
+
+
+<!-- 主体模板 -->
+<script id="storenavTpl" type="text/html">
+    {{each result value}}
+        <a href="{{value.navHref}}">
+            <img src="{{value.navImg}}" alt="">
+            <span>{{value.navTitle}}</span>
+        </a>
+       {{/each}}
+    </script>
+
+
+   
+    <!-- 模板 -->
+    <script src="lib/artTemplate/template-web.js"></script>
+    <!-- mui-js -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- zepto -->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 主页js -->
+    <script src="js/sitenav.js"></script>
+</body>
+</html>
