@@ -1,0 +1,49 @@
+@import 'topTenbase.less';
+
+
+// 主体区域
+#main {
+    width: 100%;
+    background-color: #f2f2f2; // 导航区域
+    #nav {
+        width: 100%;
+        height: 0.4rem;
+        background: linear-gradient(to bottom, #fff, #efefef);
+        padding: 0.1rem 0.05rem;
+        .bb();
+    } // 热门品牌排行
+    #hotbrand {
+        width: 100%;
+        .title {
+            line-height: 0.4rem;
+            padding: 0 0.1rem;
+            color: #b08961;
+            .bb();
+            margin: .1rem 0.05rem;
+            background-color: #eeeeee;
+            border: 1px solid @border-color;
+        }
+        .content {
+            Ul {
+                background-color: #eeeeee;
+                li {
+                    height: .4rem;
+                    line-height: 0.4rem;
+                    .bb();
+                    padding: 0;
+                    margin: 0 0.05rem;
+                    background-color: #eeeeee;
+                    a {
+                        color: #000;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        font-size: .16rem;
+                        margin: 0;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}

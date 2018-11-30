@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引包 -->
+    <!-- 1.引入mui的css -->
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <!-- 2.引入字体图标的css -->
+    <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
+    <!-- 3. 引入主页的less文件 -->
+    <link rel="stylesheet/less" href="less/topTenCategory.less">
+    <!-- 4.引入less.js的编译器文件 -->
+    <script src="lib/less/less.js"></script>
+    <!-- 5.引入rem.js  -->
+    <script src="js/rem.js"></script>
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="logo">
+            <h1><a href="#"><img src="http://static.manmanbuy.com/m/img/mlogo.png" alt=""></a></h1>
+        </div>
+        <form action="#">
+            <i class="fa fa-search"></i>
+            <input type="search" class="search" placeholder="商品比价,查历史价">
+        </form>
+        <div class="download"><a href="#">下载</a></div>
+    </header>
+
+    <!--这里放置真实显示的DOM内容-->
+    <section id="slider">
+        <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+            <div class="mui-scroll">
+                <!-- 滑动菜单 -->
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">省钱控</a></li>
+                    <li><a href="#">查历史价</a></li>
+                    <li><a href="#" class="active">比价搜索</a></li>
+                    <li><a href="#">国内折扣</a></li>
+                    <li><a href="#">白菜价</a></li>
+                    <li><a href="#">小时风云榜</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 主体部分 -->
+    <main id="main">
+        <!-- 区域滚动的父容器 高度是固定的-->
+        <div class="mui-scroll-wrapper">
+            <!-- 区域滚动的子容器 高度是由内容撑开的 -->
+            <div class="mui-scroll">
+                <!-- 十大品牌排行 -->
+                <section id="hotbrandRank">
+                    <div class="title">
+                        平板电视哪个牌子好,十大品牌排行榜
+                    </div>
+                    <div class="content">
+                        <ul class="mui-table-view getbrandCategory">
+                            <li>
+                                <a href="#">
+                                    <i class="mui-badge mui-badge-red">1</i>
+                                    <div class="info">
+                                        <p class="name">海信平板电视</p>
+                                        <p class="num">30天全网销量：2359936件</p>
+                                    </div>
+                                    <i class="mui-icon mui-icon-arrowright "></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="mui-badge mui-badge-warning">2</i>
+                                    <div class="info">
+                                        <p class="name">海信平板电视</p>
+                                        <p class="num">30天全网销量：2359936件</p>
+                                    </div>
+                                    <i class="mui-icon mui-icon-arrowright "></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="mui-badge mui-badge-green">3</i>
+                                    <div class="info">
+                                        <p class="name">海信平板电视</p>
+                                        <p class="num">30天全网销量：2359936件</p>
+                                    </div>
+                                    <i class="mui-icon mui-icon-arrowright "></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="mui-badge">4</i>
+                                    <div class="info">
+                                        <p class="name">海信平板电视</p>
+                                        <p class="num">30天全网销量：2359936件</p>
+                                    </div>
+                                    <i class="mui-icon mui-icon-arrowright "></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="mui-badge">5</i>
+                                    <div class="info">
+                                        <p class="name">海信平板电视</p>
+                                        <p class="num">30天全网销量：2359936件</p>
+                                    </div>
+                                    <i class="mui-icon mui-icon-arrowright "></i>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 出售排名 -->
+                <section id="sellRank">
+                    <div class="title">
+                        平板电视哪个牌子好,十大品牌排行榜
+                    </div>
+                    <div class="content">
+                        <ul class="mui-table-view getSellRank">
+                            <!-- <li class="mui-table-view-cell mui-media">
+                                <a href="javascript:;">
+                                    <div class="pic">
+                                        <img class="mui-media-object mui-pull-left" src="http://pro-img.zuyushop.com/ProPic/20178/Thumb/Thumb_2017080009360474424.jpg">
+                                    </div>
+                                    <div class="mui-media-body info">
+                                        <p class="name">海信(Hisense) LED55EC750US 55英寸 4K超高清 HDR智能智慧语音液晶电视</p>
+                                        <p class='mui-ellipsis price'>
+                                            <span class="productPrice">¥3199.00</span>
+                                            <i>★★★★★</i>
+                                        </p>
+                                        <p class="comment">
+                                            报价(<span class="productQuote">3</span>)
+                                            &emsp;
+                                            全网评论(<span class="productCom">287946</span> )
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="mui-table-view-cell mui-media">
+                                <a href="javascript:;">
+                                    <div class="pic">
+                                        <img class="mui-media-object mui-pull-left" src="http://pro-img.zuyushop.com/ProPic/20178/Thumb/Thumb_2017080009360474424.jpg">
+                                    </div>
+                                    <div class="mui-media-body info">
+                                        <p class="name">海信(Hisense) LED55EC750US 55英寸 4K超高清 HDR智能智慧语音液晶电视</p>
+                                        <p class='mui-ellipsis price'>
+                                            <span class="productPrice">¥3199.00</span>
+                                            <i>★★★★★</i>
+                                        </p>
+                                        <p class="comment">
+                                            报价(<span class="productQuote">3</span>)
+                                            &emsp;
+                                            全网评论(<span class="productCom">287946</span> )
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="mui-table-view-cell mui-media">
+                                <a href="javascript:;">
+                                    <div class="pic">
+                                        <img class="mui-media-object mui-pull-left" src="http://pro-img.zuyushop.com/ProPic/20178/Thumb/Thumb_2017080009360474424.jpg">
+                                    </div>
+                                    <div class="mui-media-body info">
+                                        <p class="name">海信(Hisense) LED55EC750US 55英寸 4K超高清 HDR智能智慧语音液晶电视</p>
+                                        <p class='mui-ellipsis price'>
+                                            <span class="productPrice">¥3199.00</span>
+                                            <i>★★★★★</i>
+                                        </p>
+                                        <p class="comment">
+                                            报价(<span class="productQuote">3</span>)
+                                            &emsp;
+                                            全网评论(<span class="productCom">287946</span> )
+                                        </p>
+                                    </div>
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </section>
+                <!-- 下载 -->
+                <section id="pic-download">
+                    <div style=" padding:10px;">
+                        <a href="https://dwz.cn/kNrYNghB"><img src="http://static.manmanbuy.com/img/sc/1.png" style="  width:100%; display:block;"></a>
+                    </div>
+                </section>
+                <!-- 评论列表 -->
+                <section id="userComment">
+                    <div class="title">
+                        平板电视最有用的用户评论
+                    </div>
+                    <div class="content">
+                        <ul>
+                            <!-- <li class="mui-table-view-cell mui-media">
+                                <a href="javascript:;">
+                                    <div class="pic">
+                                        <img class="mui-media-object mui-pull-left" src="http://pro-img.zuyushop.com/ProPic/20178/Thumb/Thumb_2017080009360474424.jpg">
+                                    </div>
+                                    <div class="mui-media-body info">
+                                        <p class="name">海信(Hisense) LED55EC750US 55英寸 4K超高清 HDR智能智慧语音液晶电视</p>
+                                    </div>
+                                </a>
+                                <div class="comment">
+                                    <p class="title">
+                                        <span class="user-name">8****2 :<i class="star">★★★★★</i></span>
+
+                                        <span class="time">2018-2-20</span>
+                                    </p>
+                                    <p class="content">
+                                        这款液晶电视对比其它品牌电视最喜欢的是采用IPS硬屏液晶面板，屏幕比较坚固，质量应该比其它液晶面板会好，极其突出了这款电视的性价比；色彩使用了1920*1080P的分辨率，三重XD引擎，提高了色质的水准、对比度和清晰度，呈现的画质和性能画面色彩也比较清晰，显示效果也比较细腻自然；外观方面采用生动锐利铜钱纹样设计，简约的白色电视底座搭配银色的窄边框感觉比较简单时尚，也是比较喜欢的；功能使用简单，菜单键进入图像，生意，设置，时间，选项，输入，我的媒体8个功能主题，2组HDMI接口满足了我的DVD设备和网络电视机顶和的使用，1组数字音响输出满足我外接5.1音响系统的需要，画面比例点对点扫描，让我接电脑主机的画面设置更简单；炫亮人声Ⅰ，畅听清晰对话的设计。自动识别和加强电影和电视节目中的人声的功能，使我听到的背景声音更清晰突显，标注.音乐.电影.运动.游戏五个声音模式选择满足了日常视听的需求。LG的国际品牌也是比较让大家信赖的。
+                                    </p>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="top">
+            <div class="login"><a href="#">登录</a></div>
+            <div class="register"><a href="#">注册</a></div>
+            <div class="backTop"><a href="#">
+                    <img src="http://www.zuyushop.com/wap/images/top.jpg" alt="">
+                    <span> 返回顶部</span>
+                </a> </div>
+        </div>
+        <div class="bottom">
+            <p><span><a href="#">手机APP下载</a></span><a href="#">慢慢买手机版 --</a><a href="#">掌上比价平台</a></p>
+            <p>m.manmanbuy.com</p>
+        </div>
+
+    </footer>
+
+    <!-- 第一部分渲染 -->
+    <script id="getbrandCategoryTpl" type="text/html">
+        {{each result value index}}
+            <li>
+                <a href="#">
+                    {{if index == 0}}
+                   <i class="mui-badge mui-badge-red" >{{index+1}}</i>
+                   {{else if index == 1}}
+                   <i class="mui-badge mui-badge-warning" >{{index+1}}</i>
+                   {{else if index == 2}}
+                   <i class="mui-badge mui-badge-green" >{{index+1}}</i>
+                   {{else}}
+                   <i class="mui-badge" >{{index+1}}</i>
+                   {{/if}}
+                        <div class="info">
+                            <p class="name">{{value.brandName}}</p>
+                            <p class="num">{{value.brandInfo}}</p>
+                    </div>
+                    <i class="mui-icon mui-icon-arrowright "></i>
+                </a>
+            </li>
+        {{/each}}
+    </script>
+    <!-- 第二部分渲染 -->
+    <script id="getSellRankTpl" type="text/html">
+        {{each result value}}
+            <li class="mui-table-view-cell mui-media">
+                    <a href="javascript:;" data-productid ={{value.productId}}>
+                        <div class="pic">
+                            {{@value.productImg}}
+                        </div>
+                        <div class="mui-media-body info">
+                            <p class="name">{{value.productName}}</p>
+                            <p class='mui-ellipsis price'>
+                                <span class="productPrice">{{value.productPrice}}</span>
+                                <i>★★★★★</i>
+                            </p>
+                            <p class="comment">
+                                报价(<span class="productQuote">{{value.productQuote}}</span>)
+                                &emsp;
+                                全网评论(<span class="productCom">{{value.productCom}}</span> )
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            {{/each}}
+    </script>
+    <!-- 第三部分渲染 -->
+    <script id="getUserCommentTpl" type="text/html">
+        {{each result value}}
+        <li class="mui-table-view-cell mui-media">
+                <a href="javascript:;">
+                    <div class="pic">
+                        <img class="mui-media-object mui-pull-left" src="http://pro-img.zuyushop.com/ProPic/20178/Thumb/Thumb_2017080009360474424.jpg">
+                    </div>
+                    <div class="mui-media-body info">
+                        <p class="name">{{value.comFrom}}</p>
+                    </div>
+                </a>
+                <div class="comment">
+                    <p class="title">
+                        <span class="user-name">{{value.comName}}<i class="star">★★★★★</i></span>
+
+                        <span class="time">{{value.comTime}}</span>
+                    </p>
+                    <p class="content">
+                       {{value.comContent}}
+                    </p>
+                </div>
+            </li>
+        {{/each}}
+    </script>
+
+    <!-- 5. 引入mui的js -->
+    <script src="lib/mui/js/mui.js"></script>
+    <!-- 6.引入模板的js文件 -->
+    <script src="lib/artTemplate/template-web.js"></script>
+    <!-- 7. 引入zepto的js库-->
+    <script src="lib/zepto/zepto.min.js"></script>
+    <!-- 8. 引入自己的js文件 -->
+    <script src="js/topTenCategory高级.js"></script>
+</body>
+
+</html>

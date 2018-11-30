@@ -1,0 +1,161 @@
+@import 'topTenbase.less';
+.title() {
+    padding: .1rem .05rem;
+    background-color: #f3f3f3;
+    color: #874604;
+    font-weight: 700;
+    font-size: .16rem;
+}
+
+// 主体区域
+#main {
+    // 十大品牌排行
+    #hotbrandRank {
+        .title {
+            .title();
+        }
+        .content {
+            ul {
+                li {
+                    padding: .1rem .1rem;
+                    a {
+                        display: flex;
+                        .mui-badge {
+                            width: 0.2rem;
+                            height: 0.2rem;
+                            margin-right: .1rem;
+                            border-radius: 0;
+                            text-align: center;
+                            line-height: .2rem;
+                            padding: 0;
+                            color: #fff;
+                            font-size: .14rem;
+                        }
+                        .info {
+                            flex: 1;
+                            p {
+                                margin: 0;
+                                &.name {
+                                    font-size: .16rem;
+                                    color: #000;
+                                }
+                                &.num {
+                                    font-size: .12rem;
+                                }
+                            }
+                        }
+                        .mui-icon {
+                            width: 0.2rem;
+                            height: 0.2rem;
+                            margin-top: 0.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    } // 出售排名
+    #sellRank {
+        .title {
+            .title();
+        }
+        .content {
+            ul {
+                li {
+                    a {
+                        display: flex;
+                        .pic {
+                            width: 1rem;
+                            height: 1rem;
+                            margin-right: 0.1rem;
+                            img {
+                                max-width: 1rem;
+                                max-height: 1rem;
+                                width: 1rem;
+                                height: 1rem;
+                            }
+                        }
+                        .info {
+                            flex: 1;
+                            .name {
+                                white-space: normal;
+                                color: #000;
+                            }
+                            .price {
+                                display: flex;
+                                margin: 0.05rem 0;
+                                justify-content: space-between;
+                                .productPrice {
+                                    color: #ea3900;
+                                    font-size: .18rem
+                                }
+                                >i {
+                                    font-size: .22rem;
+                                    color: #ff9000;
+                                }
+                            }
+                        }
+                        .comment {
+                            font-size: .12rem;
+                        }
+                    }
+                }
+            }
+        }
+    } // 评论列表
+    #userComment {
+        background-color: #f2f2f2;
+        >div.title {
+            .title();
+            border-top: 1px solid #d0d0d0;
+            border-bottom: 1px solid #d0d0d0;
+        }
+        .content {
+            li {
+                >a {
+                    display: flex;
+                    .pic {
+                        width: 1rem;
+                        height: 1rem;
+                        margin-right: 0.1rem;
+                        img {
+                            max-width: 1rem;
+                            max-height: 1rem;
+                            width: 1rem;
+                            height: 1rem;
+                        }
+                    }
+                    .info {
+                        flex: 1;
+                        .name {
+                            white-space: normal;
+                            color: #000;
+                            font-size: .16rem;
+                        }
+                    }
+                }
+                .comment {
+                    margin-top: .1rem;
+                    padding: .1rem .1rem;
+                    background-color: #fff;
+                    .title {
+                        display: flex;
+                        justify-content: space-between;
+                        span {
+                            color: #000;
+                            .star {
+                                margin-left: .05rem;
+                                font-size: .24rem;
+                                color: #ff9000;
+                            }
+                        }
+                    }
+                    .content {
+                        margin-top: 0.15rem;
+                        font-size: .16rem;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}
