@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>优惠券</title>
+    <!-- mui样式文件 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <!-- 字体图标样式文件 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 优惠券列表样式文件 -->
+    <link rel="stylesheet/less" href="./less/couponproduct.less">
+    <!-- less编译器文件 -->
+    <script src="./lib/less/less.js"></script>
+    <script src="./js/swiper.js"></script>
+    <link rel="stylesheet" href="./css/swiper.css">
+</head>
+
+<body>
+    <header id="header">
+        <a href="coupon.html" class="fa fa-angle-left back">
+        </a>
+        <h4 class="title"></h4>
+        <a href="#" class="appdown">
+            <img src="./images/header_app.png" alt="">
+        </a>
+    </header>
+
+    <main id="main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <p class="diancan">--点餐前出示手机中的优惠券,即可享受优惠-- </p>
+                <ul class="mui-table-view coupon-list">
+                </ul>
+               
+            </div>
+        </div>
+    </main>
+    <!-- 跳转顶部按钮 -->
+    <div class="backbtn">
+        <a id="scrollToTop" class="backTop hide">
+            <span class="mui-icon mui-icon-arrowup"></span>
+        </a>
+    </div>
+    <!-- 遮罩蒙版 -->
+    <div class="mask">
+        <div class="close">
+            <span class="mui-icon mui-icon-closeempty"></span>
+        </div>
+        <div class="mask-slide">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./images/kdj1.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/kdj2.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/kdj3.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/kdj4.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/kdj5.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/kdj4.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/kdj5.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/kdj4.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./images/kdj5.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 优惠券列表模板 -->
+        <script id="getCoupelistTpl" type="text/html">
+            {{each result value}}           
+             <li class="mui-table-view-cell mui-media" >
+                <a href="javascript:;" data-id="{{value.couponProductId}}">
+              {{@value.couponProductImg}}
+              <div class="mui-media-body">
+                  <h4>{{value.couponProductName}}</h4>
+                  <p class="price">{{value.couponProductPrice}}</p>
+                  <p class='mui-ellipsis data'>{{value.couponProductTime}}</p>
+                  <span class="mui-icon mui-icon-arrowright right"></span>
+                  </p>
+              </div>
+            </a>
+          </li>
+        {{/each}}
+        <div class="navbar"> 
+                <a href="index.html">
+                    首页&nbsp>&nbsp
+                </a>
+                <a href="coupon.html">
+                    优惠券&nbsp>&nbsp
+                </a>
+                <a href="coupon.html" class="bottom-title">
+                    肯德基优惠券
+                </a>
+            </div> 
+        <footer id="footer">
+                <div class="footer-top">
+                    <a href="#">
+                        登陆
+                    </a>
+                    <a href="#">
+                        注册
+                    </a>
+                    <a href="#">
+                        <img src="./images/top.png" alt="">
+                        返回顶部
+                    </a>
+                </div>
+                <div class="footer-end">
+                    <p>
+                        <a href="#">
+                            手机APP下载
+                        </a>
+                        <a href="#">
+                            慢慢买手机版 -- 掌上比价平台
+                        </a>
+                    </p>
+                    <p>m.manmanbuy.com</p>
+                </div>
+            </footer>     
+              <!-- 底部变色导航栏 -->
+            
+    </script>
+        <!-- mui的js文件 -->
+        <script src="./lib/mui/js/mui.js"></script>
+        <!-- zepto js文件 -->
+        <script src="./lib/zepto/zepto.min.js"></script>
+        <!-- 模板引擎文件 -->
+        <script src="./lib/artTemplate/template-web.js"></script>
+        <!-- 优惠券列表js -->
+        <script src="./js/couponproduct.js"></script>
+        <script src="./js/rem.js"></script>
+</body>
+
+</html>
