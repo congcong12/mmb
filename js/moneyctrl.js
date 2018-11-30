@@ -17,11 +17,11 @@ Manmanbuy.prototype = {
         var that = this;
         that.sendAjax(function (data) {
             pageNum = Math.ceil(data.totalCount / that.pagesize);
-            data.page = that.page + 1;
+            data.page = that.pageStart;
             var html = template('productShowTpl', data);
             $('.productList').html(html);
             that.setPage(pageNum);
-        }, that.page);
+        }, that.pageStart);
     },
 
     // ajax请求
@@ -48,8 +48,6 @@ Manmanbuy.prototype = {
             prefun: function (page) { //上一页回掉函数
                 that.sendAjax(function (data) {
                     data.page = page;
-                    console.log(data);
-
                     var html = template('productShowTpl', data);
                     $('.productList').html(html);
                     document.documentElement.scrollTop = 0;
