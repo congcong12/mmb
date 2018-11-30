@@ -14,6 +14,35 @@
     <link rel="stylesheet/less" href="less/gsproduct.less">
     <!-- 4.引入less.js的编译器文件 -->
     <script src="lib/less/less.js"></script>
+    <!-- 引入 -->
+    <script>
+        // 把rem改变根元素的字体大小的代码放到文件 需要的地方引入即可
+        setNowFontSize();
+
+       function setNowFontSize() {
+         // 根元素计算公式
+         // 已知默认根元素大小100px  已知标准屏幕是375px   
+         // 当前屏幕根元素的字体大小 =  已知默认根元素大小100px 已知标准屏幕是375px       当前屏幕大小
+         // 当前屏幕 / 标准屏幕 ==   当前根元素字体 / 标准根元素字体
+         // 750 / 375 ==   x / 100
+         // 750 / 375 * 100 == x
+         // 当前字体 =  当前屏幕 / 标准屏幕 * 标准屏幕根元素大小
+         var StandardWidth = 375;
+         var StandardFontSize = 100;
+         var maxFontSize = 200;
+         var nowWidth = document.documentElement.offsetWidth;
+         var nowFontSize = nowWidth / StandardWidth * StandardFontSize;
+         console.log(nowWidth);
+         console.log(nowFontSize);
+         // 做最大限制可以在JS判断字体大小 超过200 默认为200
+         if(nowFontSize > maxFontSize){
+             nowFontSize = maxFontSize;
+         }
+         // 把计算好的nowFontSize设置给当前屏幕的根元素 注意要带px单位
+         document.documentElement.style.fontSize = nowFontSize + 'px';
+    } 
+       window.addEventListener('resize', setNowFontSize);
+    </script>
 </head>
 
 <body>
@@ -25,35 +54,36 @@
         <h1 class="gather-product">凑单品</h1>
         <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.manmanbuy.bijia" class="appxiazai"></a>
     </header>
+    <!-- 城市分类过滤区域 -->
+    <section class="coudan_filter">
+        <!-- 左边的过滤 -->
+        <div class="coudan_filter-left br">
+            <a href="#" class="filter-shop" data-sort-type="shop" data-id="0">
+                <i class="shop-list">京东</i>
+                <span class="caret" data-direction="1"></span>
+            </a>
+            <a href="#" class="filter-area" data-sort-type="area" data-id="0">
+                <i class="shop-list">华北</i>
+                <span class="caret" data-direction="1"></span>
+            </a>
+            <a href="#" class="filter-price" data-sort-type="price" data-id="0">
+                <i class="shop-list">1元</i>
+                <span class="caret" data-direction="1"></span>
+            </a>
+        </div>
+        <!-- 右边的图片 -->
+        <div class="coudan_filter-right">
+            <a href="#">
+                <i class="search"></i>
+            </a>
+        </div>
+
+    </section>
     <!-- 主体区域 -->
     <main id="main">
         <!-- 区域滚动 -->
         <div class="mui-scroll-wrapper">
             <div class="mui-scroll">
-                <!-- 城市分类过滤区域 -->
-                <section class="coudan_filter">
-                    <!-- 左边的过滤 -->
-                    <div class="coudan_filter-left br">
-                        <a href="#" class="filter-shop" data-sort-type ="shop" data-id="0">
-                            <i class="shop-list">京东</i>
-                            <span class="caret" data-direction="1"></span>
-                        </a>
-                        <a href="#" class="filter-area" data-sort-type ="area" data-id="0">
-                            <i class="shop-list">华北</i>
-                            <span class="caret" data-direction="1"></span>
-                        </a>
-                        <a href="#" class="filter-price" data-sort-type ="price" data-id="0">
-                            <i class="shop-list">1元</i>
-                            <span class="caret" data-direction="1"></span>
-                        </a>
-                    </div>
-                    <!-- 右边的图片 -->
-                    <div class="coudan_filter-right">
-                        <a href="#">
-                            <i class="search"></i>
-                        </a>
-                    </div>
-                </section>
                 <!-- 遮罩层页面 -->
                 <section class="mask ">
                     <!-- <ul class="shop"> -->
@@ -78,13 +108,27 @@
                 <section class="coudan_product">
                     <ul class="product-list mui-row">
 
-                      
+
                     </ul>
                 </section>
+
+
             </div>
         </div>
 
     </main>
+    <!-- 旋转的圈圈 -->
+    <div class="circle" data-id="0">
+        <div class="ring"><a href="category.html" class="menuItem"></a>
+            <a href="moneyctrl.html" class="menuItem"></a>
+            <a href="inlanddiscount.html" class="menuItem"></a>
+            <a href="baicaijia.html" class="menuItem"></a>
+            <a href="moneyctrl.html" class="menuItem"></a>
+            <a href="coupon.html" class="menuItem"></a>
+            <a href="gsproduct.html" class="menuItem"></a>
+            <a href="index.html" class="menuItem"></a>
+        </div>
+    </div>
     <!-- 遮罩层的渲染模板 -->
     <!-- 商品店铺的模板 -->
     <script id="shopTpl" type="text/html">
@@ -106,8 +150,8 @@
         <% } %>
     </ul>
     </script>
-     <!-- 渲染商品页面 -->
-     <script id="productListTpl" type="text/html">
+    <!-- 渲染商品页面 -->
+    <script id="productListTpl" type="text/html">
         {{ each result value}}
         <li class="mui-col-xs-6">
             <a href="https://item.m.jd.com/ware/view.action?wareId=1274360">

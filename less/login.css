@@ -1,0 +1,337 @@
+html {
+  font-size: 100px;
+}
+body {
+  font-size: 0.14rem;
+  padding-top: 0.45rem;
+  padding-bottom: 1rem;
+}
+img {
+  vertical-align: middle;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+}
+html,
+body {
+  height: 100%;
+  background: #fff;
+}
+main {
+  overflow: hidden;
+}
+.layout {
+  position: relative;
+  height: 100%;
+}
+#search {
+  height: .45rem;
+  display: flex;
+  justify-content: space-between;
+  padding: .1rem;
+  position: fixed;
+  width: 100%;
+  top: .45rem;
+  background-color: #fff;
+}
+#search #search-txt {
+  height: .3rem;
+  border-radius: .15rem;
+  text-align: left;
+  margin-bottom: 0;
+  font-size: 0.14rem;
+}
+#search #search-btn {
+  height: .3rem;
+  border-radius: .15rem;
+  background-color: #ff4e49;
+  color: #fff;
+  margin-left: .1rem;
+  border: none;
+}
+#crumbs {
+  height: .45rem;
+  line-height: .45rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 .1rem;
+  position: fixed;
+  width: 100%;
+  top: .45rem;
+  background: linear-gradient(to bottom, #fff, #ddd);
+}
+#crumbs button {
+  height: .3rem;
+  padding: 0 .1rem;
+  line-height: .3rem;
+  margin-top: .1rem;
+  border-radius: .05rem;
+  background: linear-gradient(to top, #fff, #ddd);
+  display: inline-block;
+  float: right;
+  box-shadow: 0px 0px 1px #AAAAAA, 0px 1px 1px #AAAAAA;
+}
+#header {
+  display: flex;
+  height: 0.45rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  justify-content: space-between;
+  align-items: center;
+  background: #ff4e49;
+}
+#header > .fa-angle-left {
+  width: 0.45rem;
+  height: 0.45rem;
+  display: block;
+  font-size: 0.45rem;
+  color: #fff;
+  text-align: center;
+}
+#header > h4 {
+  flex: 1;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  display: block;
+  line-height: .45rem;
+  color: #fff;
+  font-size: 0.24rem;
+}
+#header > .header-app {
+  width: 0.45rem;
+  height: 0.45rem;
+  display: block;
+  background: url(../images/header_app.png) no-repeat center center;
+  background-size: .34rem .34rem;
+  margin-right: .1rem;
+}
+#header .logo img {
+  width: 1.85rem;
+}
+#header .download img {
+  width: 0.34rem;
+}
+#footer {
+  background: #efefef;
+  height: 1rem;
+}
+#footer .mui-row {
+  height: .3rem;
+  border-bottom: 1px solid #ccc;
+}
+#footer .mui-row .mui-col-xs-4 {
+  text-align: center;
+  line-height: .3rem;
+}
+#footer .mui-row .mui-col-xs-4 > a {
+  color: #000;
+}
+#footer .mui-row .mui-col-xs-4 + .mui-col-xs-4 {
+  border-left: 1px solid #ccc;
+}
+#footer .foot-connect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .05rem 0;
+}
+#footer .foot-connect p {
+  margin: 0;
+}
+#footer .foot-connect p.appLoad {
+  color: red;
+}
+#footer .foot-connect p span {
+  color: #8f8f94;
+}
+#footer .foot-connect p span.phone {
+  color: #000;
+}
+.footer-bottom {
+  margin-bottom: .1rem;
+  text-align: center;
+  height: 0.36rem;
+  display: flex;
+}
+.footer-bottom .f33 {
+  flex: 1;
+  text-align: center;
+}
+.footer-bottom .f33 > a {
+  width: .82rem;
+  display: block;
+  height: 0.36rem;
+  margin: 0 auto;
+  line-height: 0.36rem;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#f1f1f1), to(#d4d4d4));
+  color: #000;
+  border-radius: 0.05rem;
+}
+.footer-bottom .f33 > #select {
+  width: 0.95rem;
+  height: 0.36rem;
+  padding: 0.08rem 0.25rem;
+}
+body {
+  background: #f2f2f2;
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+#main .btnLoading {
+  padding: 0.2rem 0.1rem;
+}
+#main .btnLoading .btn {
+  width: 100%;
+}
+.bxs-row {
+  margin-bottom: .12rem;
+}
+.logo-box {
+  width: 100%;
+  border: 0.01rem solid #e5e5e5;
+  border-radius: .04rem;
+  box-shadow: 0 0.04rem 0.18rem rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  height: 3.6rem;
+}
+.login {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: .42rem .42rem .36rem;
+  transition: all 0.8s;
+}
+.username,
+.password,
+.btn {
+  height: .44rem;
+  width: 100%;
+  padding: 0 .1rem;
+  border: .01rem solid #9da3a6;
+  background: #fff;
+  text-overflow: ellipsis;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: .04rem;
+  -moz-border-radius: .04rem;
+  -khtml-border-radius: .04rem;
+  border-radius: .04rem;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: #000;
+  font-size: 1em;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  direction: ltr;
+  font-size: .13rem;
+}
+.submit {
+  background-color: #0070ba;
+  color: #fff;
+  border: .01rem solid #0070ba;
+}
+.submit:hover {
+  background-color: #005ea6;
+}
+.verBox {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 4.04rem;
+  top: 0;
+  opacity: 0;
+  transition: all 0.8s;
+  padding-top: .55rem;
+}
+.err {
+  margin: .12rem 0 0;
+  line-height: .12rem;
+  height: .12rem;
+  font-size: .12rem;
+  color: red;
+}
+.slider-btn {
+  position: absolute;
+  width: .44rem;
+  height: .44rem;
+  left: 0;
+  top: -0.07rem;
+  z-index: 12;
+  cursor: pointer;
+  background-image: url(../images/cat.png);
+  background-size: cover;
+  background-position: 0 -0.84rem;
+  transition: inherit;
+}
+.ver-tips {
+  position: absolute;
+  left: 0;
+  bottom: -0.22rem;
+  background: rgba(255, 255, 255, 0.9);
+  height: .22rem;
+  line-height: .22rem;
+  font-size: .12rem;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  padding: 0 .08rem;
+  transition: all 0.4s;
+}
+.slider-tips {
+  bottom: 0;
+}
+.ver-tips i {
+  display: inline-block;
+  width: .22rem;
+  height: .22rem;
+  vertical-align: top;
+  background-image: url(../images/9.gif);
+  background-size: cover;
+}
+.ver-tips span {
+  display: inline-block;
+  vertical-align: top;
+  line-height: .22rem;
+  color: #455;
+}
+.active-tips {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+.re-btn {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: .28rem;
+  padding: 0 .16rem;
+}
+.re-btn a {
+  display: inline-block;
+  width: .14rem;
+  height: .14rem;
+  margin: .07rem 0;
+  background-image: url(../images/10.gif);
+  background-size: cover;
+  cursor: pointer;
+}
+.re-btn a:hover {
+  background-position: 0 -11.93rem;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="lib/mui/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet/less" href="less/login.less">
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <a href="javascript:history.back()" class="fa fa-angle-left"></a>
+        <h4 class="h4-text">登录</h4>
+        <a href="#" class="header-app"></a>
+    </header>
+    <main id="main">
+        <div class="logo-box">
+            <div class="login" style="">
+                <div class="bxs-row" style="text-align:center;">
+                    <img id="logo" src="images/8.gif" style="width:72px;"><span class="tips" style="color:red;">欢迎来登录~~</span>
+                </div>
+                <div class="bxs-row">
+                    <input type="text" class="username" placeholder="用户名">
+                    <p class=" err err-username"></p>
+                </div>
+                <div class="bxs-row">
+                    <input type="password" class="password" placeholder="密码">
+                    <p class="err err-password"></p>
+                </div>
+                <div class="bxs-row">
+                    <input type="submit" class="submit btn" value="登录">
+                </div>
+            </div>
+            <div class="verBox">
+                <div id="imgVer" style="display:inline-block;"></div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="mui-content">
+            <div class="mui-row">
+                <div class="mui-col-xs-4">
+                    <a href="#">登录</a>
+                </div>
+                <div class="mui-col-xs-4">
+                    <a href="#">注册</a>
+                </div>
+                <div class="mui-col-xs-4 goTop">
+                    <a href="#">返回顶部</a>
+                </div>
+            </div>
+        </div>
+        <div class="foot-connect">
+            <p class="appLoad">手机APP下载 <span class="phone">慢慢买手机版</span> <span>-- 掌上比价平台</span></p>
+            <p class="location">m.manmanbuy.com</p>
+        </div>
+    </footer>
+
+</body>
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/login.js"></script>
+</html>

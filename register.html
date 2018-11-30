@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="lib/mui/css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet/less" href="less/register.less">
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <a href="javascript:history.back()" class="fa fa-angle-left"></a>
+        <h4 class="h4-text">注册</h4>
+        <a href="#" class="header-app"></a>
+    </header>
+    <main id="main">
+        <form class="mui-input-group userPass">
+            <div class="mui-input-row">
+                <label style="display: none">用户名</label>
+                <input type="text" class="mui-input-clear username" placeholder="请输入用户名">
+            </div>
+            <div class="mui-input-row">
+                <label style="display: none">密码</label>
+                <input type="password" class="mui-input-password password" placeholder="密码(6-20个字符)">
+            </div>
+            <div class="mui-input-row">
+                <label style="display: none">手机号</label>
+                <input type="tel" class="mui-input-clear mobile" placeholder="请输入手机号" value="15989346502">
+            </div>
+            <div class="mui-input-row code">
+                <label style="display: none">验证码</label>
+                <input maxlength="6" type="text" class="mui-input-clear yzinput" placeholder="输入验证码">
+                <button type="button" class="yzbtn" style="width:1.8rem;height:.4rem">验证码</button>
+            </div>
+            <div class="mui-input-row">
+                <label style="display: none">邮箱</label>
+                <input type="email" class="mui-input-clear emailval" placeholder="请输入邮箱">
+            </div>
+        </form>
+        <div class="btnLoading">
+            <button type="button" class="mui-btn mui-btn-primary submit btn">注册</button>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="mui-content">
+            <div class="mui-row">
+                <div class="mui-col-xs-4">
+                    <a href="#">登录</a>
+                </div>
+                <div class="mui-col-xs-4">
+                    <a href="#">注册</a>
+                </div>
+                <div class="mui-col-xs-4 goTop">
+                    <a href="#">返回顶部</a>
+                </div>
+            </div>
+        </div>
+        <div class="foot-connect">
+            <p class="appLoad">手机APP下载 <span class="phone">慢慢买手机版</span> <span>-- 掌上比价平台</span></p>
+            <p class="location">m.manmanbuy.com</p>
+        </div>
+    </footer>
+
+</body>
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/register.js"></script>
+
+</html>

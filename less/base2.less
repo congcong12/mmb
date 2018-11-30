@@ -1,108 +1,434 @@
-@main-color:#ff841d;
-@border-color: #ccc;
-
-html{
+html {
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
     font-size: 100px;
 }
 
-body{
-    font-size: 0.14rem;
-    padding-top: 0.45rem;
-}
-
-img{
-    vertical-align: middle;
-
-}
-
-*{
-    padding: 0;
+body {
     margin: 0;
+    font-size: .14rem;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #fff;
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden],
+template {
+    display: none;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+a {
+    background: transparent;
+    text-decoration: none;
+    /* 设置a标签的高亮背景色  手指按住的时候会出现 */
+    -webkit-tap-highlight-color: transparent;
+    color: #000;
+}
+
+a:active {
+    outline: 0;
+}
+
+a:active {
+    color: #006699;
+}
+
+abbr[title] {
+    border-bottom: .01rem dotted;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+dfn {
+    font-style: italic;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+pre {
+    overflow: auto;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+button {
+    overflow: visible;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input {
+    line-height: normal;
+    border: 0;
+    outline: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-ul{
-    list-style: none;
-}
-html,body{
-    height: 100%;
-   background: #fff;
-}
-main{
-    height: 100%;
-    overflow: hidden;
-    position: relative;
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
 }
 
-#header{
-    display: flex;
-    height: 0.45rem;
+fieldset {
+    border: .01rem solid #c0c0c0;
+    margin: 0 2rem;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+optgroup {
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+form,
+blockquote {
+    margin: 0;
+}
+
+ul,
+ol,
+li,
+dl,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none outside none;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 2;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #cccccc;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #cccccc;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #cccccc;
+}
+
+* {
+    /*移动端禁止出现水平方向滚动条 都要设置box-sizing:border-box 为了让盒子设置了边框padding不会加的盒子的大小*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* 公共类 */
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#header {
+    height: .45rem;
+    background-image: linear-gradient(to top right,gold,#f4483e,red,#f4483e,);
     position: fixed;
+    z-index: 999;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999;
-    background: @main-color;
-    >.fa-angle-left{
-        width: 0.45rem;
-        height: 0.45rem;
-        display: block;
-        font-size: 0.45rem;
-        color: #fff;
-        text-align: center;
-    }
-    >h4{
-        flex: 1;
-        height: 100%;
-        margin: 0;
-        text-align: center;
-        display: block;
+    .fa-angle-left {
+        font-size: .40rem;
+        color: white;
+        float: left;
+        position: absolute;
+        left: .1rem;
         line-height: .45rem;
-        color: #fff;
-        font-size: 0.24rem;
     }
-    >.header-app{
-        width: 0.45rem;
-        height: 0.45rem;
-        display: block;
-        background: url(../images/header_app.png);
-        background-size: cover;
-        margin-right: .1rem
+    h4 {
+        padding: 0;
+        margin: 0;
+        color: white;
+        position: absolute;
+        left: 50%;
+        margin-left: -.2rem;
+        line-height: .45rem;
+        font-size: .2rem;
     }
-}
-#footer{
-    background: #efefef;
-    height: 1rem;
-    .mui-row{
-        height: .3rem;
-        border-bottom: 1px solid #ccc;
-        .mui-col-xs-4{
-            text-align: center;
-            line-height: .3rem;
-            >a{
-                color: #000;
-            }
-            &+.mui-col-xs-4{
-                border-left: 1px solid #ccc;
-            }
+    .appdown {
+        position: absolute;
+        right: .05rem;
+        top: .05rem;
+        img {
+            width: .34rem;
+            height: .34rem;
         }
     }
-    .foot-connect{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: .05rem 0;
-        p{
-            margin: 0;
-            &.appLoad{
-                color: red;
-            }
-            span{
-                color: #8f8f94;
-            }
-            span.phone{
-                color: #000;
-            }
+}
 
+html,
+body {
+    height: 100%;
+}
+
+
+/* 给中间主体部分高度也是100% */
+
+#main {
+    height: 100%;
+    overflow: hidden;
+    /* 注意还要给main加一个相对定位 因为里面的mui-scroll-wrapper设置了绝对定位 */
+    position: relative;
+}
+
+.navbar {
+    
+    bottom: 1.61rem;
+    height: .35rem;
+    width: 100%;
+    background-image: linear-gradient(to top right,#f4483e,red,#f4483e,gold);
+    a {
+        line-height: .35rem;
+        padding-left: .05rem;
+        color: #fff;
+    }
+}
+
+#footer {
+    width: 100%;
+    
+    background-color: #232a34;
+    // margin-top: .3rem;
+    .footer-top {
+        border-bottom: .01rem solid #727272;
+        height: .34rem;
+        line-height: .34rem;
+        clear: both;
+        text-align: center;
+        a {
+            box-sizing: border-box;
+            float: left;
+            font-size: .14rem;
+            border-right: .01rem solid #727272;
+            text-align: center;
+            width: 30%;
+            color: #fff;
+        }
+        a:last-child{
+            border: 0;
+            width: 40%;
+        }
+    }
+    .footer-end {
+        padding: .15rem 0;
+        background-color: #232a34;
+        p {
+            text-align: center;
+            a {
+                color: #bebebe;
+            }
+            a:first-child {
+                margin-top: .1rem;
+                color: #ff4e49;
+                text-align: center;
+            }
         }
     }
 }

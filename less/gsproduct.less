@@ -22,6 +22,8 @@ h1,h2,h3,h4,h5,h6 {
 //body的底部为0
 body{
     padding-bottom: 0;
+    padding-top: .81rem;
+    overflow: hidden;
 }
 html,
 body {
@@ -81,58 +83,159 @@ body {
         background-size: 32px 32px;
     }
 }
+//第二部分固定的样式
+.coudan_filter {
+    position: fixed;
+    top: .44rem;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    padding-right: .45rem;
+    border-bottom: .02rem solid #eee; //左边的样式
+    .coudan_filter-left {
+        display: flex;
+        height: .37rem;
+        line-height: .37rem;
+        border-right: .02rem solid #d5d5d5;
+        display: flex;
+        >a {
+            font-size: .14rem;
+            width: 33.33%;
+            text-align: center;
+            position: relative;
+            .caret {
+                position: absolute;
+                top: 45%;
+                width: 0;
+                height: 0;
+                border: .08rem solid transparent;
+                border-top: .08rem solid #ccc;
+                margin-left: .1rem; // border-left: 0.08rem solid transparent;
+                // border-right: 0.08rem solid transparent;
+            }
+        }
+    }
+    .coudan_filter-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: .45rem;
+        height: .37rem;
+        a {
+            display: block;
+            height: 100%;
+            width: 100%;
+            background: url("../images/search.png") no-repeat;
+            padding: .08rem;
+            background-origin: content-box;
+            background-clip: content-box;
+            background-size: .26rem .26rem;
+        }
+    }
+} 
 
+  //旋转圈圈的遮罩层样式
+  .circle {
+    display: block;
+    position: absolute;
+    top: .45rem;
+    left:0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #b3b3b3;
+    background-color: rgba(0,0,0,0.5);
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+    transform: translate(0,0);
+    z-index: 2000;
+    .ring {
+        z-index: 1999;
+        position: absolute;
+        left: .15rem;
+        top:.15rem;
+        width: 0;
+        height: 0;
+        background-color: rgba(0,0,0,0.5);
+        border-radius: 50%;
+        opacity: 0;
+        overflow: hidden;
+        &.open{
+            left: -0.45rem;
+            top: -0.45rem;
+            opacity: 1;
+            width:1.2rem;
+            height: 1.2rem;
+            -webkit-transition: all 0.5s;
+            -moz-transition: all 0.5s;
+            -ms-transition: all 0.5s;
+            -o-transition: all 0.5s;
+            transition: all 0.5s;
+            -webkit-transform: scale(1) rotate(0deg);
+            -moz-transform: scale(1) rotate(0deg);
+            -transform: scale(1) rotate(0deg);
+        }
+    }
+    .menuItem {
+        border-radius: 50%;
+        color: #eeeeee;
+        display: block;
+        height:.3rem;
+        line-height:.3rem;
+        margin-left: -0.15rem;
+        margin-top: -0.15rem;
+        position: absolute;
+        text-align: center;
+        width: 30px;
+        background-size: .3rem .3rem;
+    }
+    .ring>a:nth-child(1) {
+        background-image: url(../images/ic_search.png);
+        left: 50%; 
+        top: 15%;
+    }
+    .ring>a:nth-child(2) {
+        background-image: url(../images/ic_cu.png);
+        left: 74.7487%; 
+        top: 25.2513%;
+    }
+    .ring>a:nth-child(3) {
+        background-image: url(../images/ic_coudanpin.png);
+       left: 85%; 
+       top: 50%;
+    }
+    .ring>a:nth-child(4) {
+        background-image: url(../images/ic_bcj.png);
+         left: 74.7487%; 
+         top: 74.7487%;
+    }
+    .ring>a:nth-child(5) {
+        background-image: url(../images/haitao.png);
+        left: 50%;
+        top: 85%;
+    }
+    .ring>a:nth-child(6) {
+        background-image: url(../images/ic_temai.png);
+        left: 25.2513%; 
+        top: 74.7487%;
+    }
+    .ring>a:nth-child(7) {
+        background-image: url(../images/ic_coudanpin.png);
+        left: 15%;
+        top: 50%;
+    }
+    .ring>a:nth-child(8) {
+        background-image: url(../images/home.png);
+        left: 25.2513%;
+        top: 25.2513%;
+    }
+}
 // 主体区域样式
 #main {
     //城市过滤区域
     background-color: #f1f1f1;
-    .coudan_filter {
-        background-color: #fff;
-        position: relative;
-        width: 100%;
-        padding-right: .45rem;
-        border-bottom: .02rem solid #eee; //左边的样式
-        .coudan_filter-left {
-            display: flex;
-            height: .37rem;
-            line-height: .37rem;
-            border-right: .02rem solid #d5d5d5;
-            display: flex;
-            >a {
-                font-size: .14rem;
-                width: 33.33%;
-                text-align: center;
-                position: relative;
-                .caret {
-                    position: absolute;
-                    top: 45%;
-                    width: 0;
-                    height: 0;
-                    border: .08rem solid transparent;
-                    border-top: .08rem solid #ccc;
-                    margin-left: .1rem; // border-left: 0.08rem solid transparent;
-                    // border-right: 0.08rem solid transparent;
-                }
-            }
-        }
-        .coudan_filter-right {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: .45rem;
-            height: .37rem;
-            a {
-                display: block;
-                height: 100%;
-                width: 100%;
-                background: url("../images/search.png") no-repeat;
-                padding: .08rem;
-                background-origin: content-box;
-                background-clip: content-box;
-                background-size: .26rem .26rem;
-            }
-        }
-    } // 产品区域的样式
+  // 产品区域的样式
     .coudan_product {
         padding: .06rem;
         .product-list {
@@ -186,14 +289,14 @@ body {
     .mask {
         position: absolute;
         left: 0;
-        top: .39rem;
+        top: 0rem;
         width: 100%;
         box-shadow: 0 .02rem .02rem #ccc;
         background-color: #fff;
-        z-index: 999;
+        z-index: 980;
         display: none;
-        // .price{
-        //     display:none;
+        // &.show{
+        //     display:block;
         // }
         li {
             padding: 0 .2rem;
@@ -211,4 +314,5 @@ body {
             }
         }
     }
+  
 }

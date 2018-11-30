@@ -1,125 +1,83 @@
-$(function(){
-	var getMoney=new mmbGetMoney;
-	getMoney.queryProduct();
-	getMoney.getProduct();
-	getMoney.nextPageProduct();
-	getMoney.upPageProduct();
-	getMoney.checkPageProduct();
-	getMoney.pickOptionPage();
+$(function () {
+    var pagePrevent = getQueryString('pagePrevent');
+    var manmanbuy = new Manmanbuy(pagePrevent);
+    manmanbuy.showProduct();
 })
 
-var mmbGetMoney = function(){
+var Manmanbuy = function (pageStart) {
+    this.pageStart = pageStart || 1;
+};
+Manmanbuy.prototype = {
+    href: 'http://localhost:9090/',
+    page: 0,
+    pageNum: 0,
+    pagesize: 10,
+    // 一开始渲染页面
+    showProduct: function () {
+        var that = this;
+        that.sendAjax(function (data) {
+            pageNum = Math.ceil(data.totalCount / that.pagesize);
+            data.page = that.pageStart;
+            var html = template('productShowTpl', data);
+            $('.productList').html(html);
+            that.setPage(pageNum);
+        }, that.pageStart);
+    },
 
+    // ajax请求
+    sendAjax: function (callback, page) {
+        var that = this;
+        $.ajax({
+            url: that.href + 'api/getmoneyctrl',
+            data: {
+                pageid: page
+            },
+            success: function (data) {
+                callback(data);
+            }
+        });
+    },
+
+    // 分页功能
+    setPage: function (pageNum) {
+        var that = this;
+        // 当前版本调用方法 如下
+        var initpage = new Initpage({
+            pageStart: that.pageStart, //默认显示页码
+            pageCount: pageNum, // 总页数
+            prefun: function (page) { //上一页回掉函数
+                that.sendAjax(function (data) {
+                    data.page = page;
+                    var html = template('productShowTpl', data);
+                    $('.productList').html(html);
+                    document.documentElement.scrollTop = 0;
+                }, page);
+            },
+            nextfun: function (page) { //下一页回掉函数
+                that.sendAjax(function (data) {
+                    data.page = page;
+                    var html = template('productShowTpl', data);
+                    $('.productList').html(html);
+                    document.documentElement.scrollTop = 0;
+                }, page);
+            },
+            callback: function (page) { // 输入框失去焦点后回调函数,参数为页码,可以不传
+                that.sendAjax(function (data) {
+                    data.page = page;
+                    var html = template('productShowTpl', data);
+                    $('.productList').html(html);
+                }, page);
+            }
+        });
+        initpage.init();
+    }
 }
-
-mmbGetMoney.prototype={
-	baseURL:'http://localhost:9090',
-	pageSize : 10,
-	pageid:1,
-	page:1,
-	//渲染
-	queryProduct:function(){
-		var that =this ;
-		
-		that.pageAjax(function(data){
-			var html=template('productTpl',data)
-			$('#main .content ul').html(html);
-		})
-	},
-	getProduct:function(){
-		var that = this;
-		that.pageAjax(function(data){
-			var html=template('productTpl',data)
-			$('#main .content ul').html(html);
-			
-		})
-	},
-	//下一页
-	nextPageProduct:function(){
-		var that=this;
-		
-		$('.btn2').on('tap',function(){
-			that.pageid++;
-			if(that.pageid>that.page){
-				that.pageid=1;
-			} 
-			console.log(that.pageid);
-			that.pageAjax(function(data){
-				var html=template('productTpl',data)
-				$('#main .content ul').html(html);
-				$('#select').val(that.pageid);
-				document.documentElement.scrollTop = 0;
-			})
-			
-		})
-	},	
-	//上一页
-	upPageProduct:function(){
-		var that=this;
-		$('.btn1').on('tap',function(){
-			that.pageid--;
-			console.log(that.pageid);
-			if(that.pageid==0){
-				that.pageid=that.page;
-			}
-			that.pageAjax(function(data){
-				var html=template('productTpl',data)
-				$('#main .content ul').html(html);
-				$('#select').val(that.pageid);
-				document.documentElement.scrollTop = 0;
-			})
-		})
-	},
-	//select值
-	checkPageProduct:function(){
-		var that = this ;
-		$.ajax({
-			url:this.baseURL+'/api/getmoneyctrl',
-			success:function(data){
-				console.log(data);
-				that.page=Math.ceil(data.totalCount/data.pagesize);
-				console.log(that.page);
-				data.page=that.page;
-				for(var i=0;i<data.page;i++){
-					var opt=document.createElement('option');
-					opt.innerHTML=i+1;
-					opt.value=i+1;
-					$('#select').append(opt);
-				}
-
-			}	
-		})
-	},
-	//页码ajax封装
-	pageAjax:function(callback){
-		var that = this;
-		$.ajax({
-			url:this.baseURL+'/api/getmoneyctrl',
-			data:{pageid:that.pageid-1},
-			success:function(data){
-				callback(data);
-			}
-		})
-	},
-	//点击相应的页码跳转到相应页面
-	pickOptionPage:function(){
-		var that = this ;
-		$('#select').on('change',function(){
-			var selectval=$('#select').val()
-			console.log(selectval)
-			that.pageid=selectval;
-			$.ajax({
-				url:that.baseURL+'/api/getmoneyctrl',
-				data:{pageid:selectval-1},
-				success:function(data){
-					var html=template('productTpl',data)
-					$('#main .content ul').html(html);
-					document.documentElement.scrollTop = 0;
-				}
-			})
-		})
-			
-	}
+//使用正则写的获取url地址栏参数的方法
+function getQueryString(name) {
+    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) {
+        return decodeURI(r[2]);
+    }
+    return null;
 }
-
-

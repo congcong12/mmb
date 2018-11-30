@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>海淘折扣</title>
+    <title>国内折扣</title>
     <link rel="stylesheet" href="lib/mui/css/mui.min.css">
     <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
-    <link rel="stylesheet/less" href="less/moneyctrl.less">
+    <link rel="stylesheet/less" href="less/inlanddiscount.less">
     <script src="lib/less/less.js"></script>
 </head>
 
@@ -16,29 +16,23 @@
     <!-- 头部区域 -->
     <header id="header">
         <a href="javascript:history.back();" class="fa fa-angle-left"></a>
-        <h4>省钱控-最新优惠</h4>
+        <h4>国内折扣</h4>
         <a href="#" class="fa fa-download"></a>
     </header>
     <!-- 主体区域 -->
     <main id="main">
-        <div class="product-show">
-            <ul class="mui-table-view productList">
-                <li class="mui-table-view-cell mui-media">
-                    <a href="javascript:;">
-                        <img class="mui-media-object mui-pull-left picleft" src="http://cacheimg.manmanbuy.com/r_img/cacheimg.aspx?width=600&imgurl=http://a.manmanbuy.com:8013/cuxiaoPic/201610/201610001412282758.jpg">
-                        <div class="mui-media-body">
-                            <p class="title">移动端凑单品：海天 鲜味 生抽 1.28L <span class="price">10.9元</span></p>
-                            <div class="info">
-                                <p>京东商城 | <span>10-25 14:10</span></p>
-                                <p>有1人评论</p>
-                            </div>
-                        </div>
+        <div class="product-list">
+            <div class="mui-row">
+                <div class="mui-col-xs-6">
+                    <a href="#">
+                        <img src="images/product.jpg" alt="">
+                        <p class="title">西域美农新疆特产五星和田红枣250g*2</p>
+                        <p class="sub-title">19.8元(5件99元)</p>
+                        <p class="info">京东商城 | 10-22 13:28</p>
                     </a>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
-        <!-- 分页区域 -->
-        <div id="page"></div>
     </main>
     <!-- 底部区域 -->
     <footer id="footer">
@@ -66,6 +60,7 @@
     <script>
         // rem适配
         setNowFontSize();
+
         function setNowFontSize() {
             var StandardWidth = 375;
             var StandardFontSize = 100;
@@ -75,31 +70,22 @@
         }
         window.addEventListener('resize', setNowFontSize);
     </script>
-    <script id="productShowTpl" type="text/html">
-        {{if result.length>0}}
-        {{each result value index}}
-        <li class="mui-table-view-cell mui-media">
-            <a href="saveDetail.html?productid={{value.productId}}&page={{page}}">
-                <div class="productImg">{{@value.productImg2}}</div>
-                <div class="mui-media-body">
-                    <p class="title">{{value.productName}}<span class="price">{{value.productPinkage}}</span></p>
-                    <div class="info">
-                        <p>{{value.productFrom}} | <span>{{value.productTime}}</span></p>
-                        <p>{{value.productComCount}}</p>
-                    </div>
-                </div>
-            </a>
-        </li>
+    <script id="productTpl" type="text/html">
+        {{each result value}}
+            <div class="mui-col-xs-6">
+                <a href="discount-product.html?productId={{value.productId}}">
+                    <div class="pic">{{@value.productImg}}</div>
+                    <p class="title">{{value.productName}}</p>
+                    <p class="sub-title">{{value.productPrice}}</p>
+                    <p class="info">{{value.productTime}}</p>
+                </a>
+            </div>
         {{/each}}
-        {{else}}
-        <p style="text-align: center">亲!很抱歉呢,没有更多商品了!</p>
-        {{/if}}
     </script>
     <script src="lib/mui/js/mui.js"></script>
     <script src="lib/zepto/zepto.min.js"></script>
-    <script src="js/initpage.js"></script>
     <script src="lib/artTemplate/template-web.js"></script>
-    <script src="js/moneyctrl.js"></script>
+    <script src="js/inlanddiscount.js"></script>
 </body>
 
 </html>
