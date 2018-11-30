@@ -1,0 +1,236 @@
+@main-color: #ff8e59;
+@border-color: #d5d5d5;
+html {
+    font-size: 100px;
+}
+
+body {
+    font-size: 0.14rem;
+    background-color: #fff;
+    padding-top: .84rem;
+    padding-bottom: 1.1rem;
+}
+
+i{
+    font-style: normal;
+}
+
+img {
+    vertical-align: middle;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-weight: normal;
+    line-height: 0;
+    margin: 0;
+}
+
+input {
+    border: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+#main {
+    height: 100%;
+    overflow: hidden;
+    /* 注意还要给main加一个相对定位 因为里面的mui-scroll-wrapper设置了绝对定位 */
+    position: relative;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+// 边框公共样式
+.bb() {
+    border-bottom: 1px solid @border-color;
+}
+
+.bt() {
+    border-top: 1px solid @border-color;
+}
+
+.br() {
+    border-right: 1px solid @border-color;
+}
+
+.bl() {
+    border-left: 1px solid @border-color;
+}
+
+// 头部区域
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    padding: 0.09rem 0.1rem;
+    height: .44rem;
+    width: 100%;
+    .bb();
+    .logo {
+        width: 27%;
+        a {
+            display: block;
+            img {
+                max-width: 100%;
+                max-height: .24rem;
+            }
+        }
+    }
+    form {
+        flex: 1;
+        position: relative;
+        i {
+            position: absolute;
+            left: 0.1rem;
+            top: 0.05rem;
+            color: #cecece;
+            font-weight: normal;
+        }
+        input {
+            box-sizing: border-box;
+            width: 95%;
+            height: 0.25rem;
+            border-radius: 0.12rem;
+            background-color: #f9f9f9;
+            padding-left: .3rem;
+            text-align-last: left;
+        }
+    }
+    .download {
+        width: .36rem;
+        height: 0.2rem;
+        border: 1px solid @main-color;
+        border-radius: 0.1rem;
+        margin-top: .03rem;
+        a {
+            display: block;
+            width: 100%;
+            height: .2rem;
+            text-align: center;
+            color: @main-color;
+            line-height: 0.2rem;
+            font-size: .12rem;
+        }
+    }
+}
+
+// 横向滚动区域
+#slider {
+    height: 0.4rem;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: .44rem;
+    left: 0;
+    .bb();
+    >div {
+        height: 0.4rem;
+        .mui-scroll {
+            width: 5.46rem;
+        }
+        ul {
+            width: 5.46rem;
+            height: .4rem;
+            li {
+                float: left;
+                height: 100%;
+                text-align: center;
+                padding: 0 .12rem;
+                line-height: 0.4rem;
+                font-size: .15rem;
+                font-weight: 700;
+                a {
+                    display: block;
+                    height: 100%;
+                    position: relative;
+                    color: #000;
+                    &.active {
+                        color: @main-color;
+                        &::before {
+                            content: "";
+                            display: block;
+                            width: 25px;
+                            height: 4px;
+                            background: #f85000;
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            margin-left: -12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 底部
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 1.1rem;
+    background-color: #efefef;
+    text-align: center;
+    width: 100%;
+    z-index: 999;
+    .top {
+        height: .4rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .bt();
+        .bb();
+        >div {
+            flex: 1;
+            height: 100%;
+            text-align: center;
+            line-height: .4rem;
+            .br();
+            &.backTop {
+                img {
+                    width: 0.15rem;
+                    height: 0.15rem;
+                }
+                span {
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+    .bottom {
+        padding: .2rem 0;
+        p {
+            margin: 0;
+            height: .16rem;
+            &:last-child {
+                font-size: .12rem;
+                height: .13rem;
+            }
+            a {
+                padding-right: 0.05rem;
+            }
+            span {
+                a {
+                    color: #f76e6e;
+                }
+            }
+        }
+    }
+}
