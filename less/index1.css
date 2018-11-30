@@ -92,6 +92,57 @@ a {
   line-height: 0.2rem;
   font-size: .12rem;
 }
+#slider {
+  height: 0.4rem;
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: .44rem;
+  left: 0;
+  border-bottom: 0.01rem solid #d5d5d5;
+}
+#slider > div {
+  height: 0.4rem;
+}
+#slider > div .mui-scroll {
+  width: 5.46rem;
+}
+#slider > div ul {
+  width: 5.46rem;
+  height: .4rem;
+}
+#slider > div ul li {
+  float: left;
+  height: 100%;
+  text-align: center;
+  padding: 0 .12rem;
+  line-height: 0.4rem;
+  font-size: .15rem;
+  font-weight: 700;
+}
+#slider > div ul li a {
+  display: block;
+  height: 100%;
+  position: relative;
+  color: #000;
+}
+#slider > div ul li a.active {
+  color: #ff8e59;
+}
+#slider > div ul li a.active::before {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 4px;
+  background: #f85000;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -12px;
+}
+#main {
+  margin-top: .4rem;
+}
 #main #nav {
   min-height: 1.64rem;
   background-color: #fff;
@@ -100,6 +151,42 @@ a {
 #main #nav .mui-row {
   text-align: center;
   padding: .05rem;
+}
+#main #nav .mui-row div:nth-child(1) {
+  animation: bounceInLeft 2s 0.6s ease-in-out both;
+}
+#main #nav .mui-row div:nth-child(2) {
+  animation: bounceInDown 1s 0.6s ease-in-out both;
+}
+#main #nav .mui-row div:nth-child(3) {
+  animation: bounceInDown 1s 0.6s ease-in-out both;
+}
+#main #nav .mui-row div:nth-child(4) {
+  animation: bounceInRight 2s 0.6s ease-in-out both;
+}
+#main #nav .mui-row div:nth-child(5) {
+  animation: rotateInDownLeft 2s 0.6s ease-in-out both;
+}
+#main #nav .mui-row div:nth-child(6) {
+  animation: bounceInUp 1s 0.6s ease-in-out both;
+}
+#main #nav .mui-row div:nth-child(7) {
+  animation: bounceInUp 1s 0.6s ease-in-out both;
+}
+#main #nav .mui-row div:nth-child(8) {
+  animation: rotateInDownRight 2s 0.6s ease-in-out both;
+}
+#main #nav .mui-row div:nth-child(9) {
+  animation: zoomInDown 0.6s 0.6s ease-in-out both;
+}
+#main #nav .mui-row div:nth-child(10) {
+  animation: zoomInDown 0.7s 0.6s ease-in-out both;
+}
+#main #nav .mui-row div:nth-child(11) {
+  animation: zoomInDown 0.8s 0.6s ease-in-out both;
+}
+#main #nav .mui-row div:nth-child(12) {
+  animation: zoomInDown 0.9s 0.6s ease-in-out both;
 }
 #main #nav .mui-row a img {
   width: 50%;
@@ -217,4 +304,100 @@ a {
 }
 #main #footer .bottom p span a {
   color: #f76e6e;
+}
+.circle {
+  display: block;
+  position: absolute;
+  top: .45rem;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #b3b3b3;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  transform: translate(0, 0);
+  z-index: 2000;
+}
+.circle .ring {
+  z-index: 1999;
+  position: absolute;
+  left: .15rem;
+  top: .15rem;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+  overflow: hidden;
+}
+.circle .ring.open {
+  left: -0.45rem;
+  top: -0.45rem;
+  opacity: 1;
+  width: 1.2rem;
+  height: 1.2rem;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(1) rotate(0deg);
+  -moz-transform: scale(1) rotate(0deg);
+  -transform: scale(1) rotate(0deg);
+}
+.circle .menuItem {
+  border-radius: 50%;
+  color: #eeeeee;
+  display: block;
+  height: .3rem;
+  line-height: .3rem;
+  margin-left: -0.15rem;
+  margin-top: -0.15rem;
+  position: absolute;
+  text-align: center;
+  width: 30px;
+  background-size: .3rem .3rem;
+}
+.circle .ring > a:nth-child(1) {
+  background-image: url(../images/ic_search.png);
+  left: 50%;
+  top: 15%;
+}
+.circle .ring > a:nth-child(2) {
+  background-image: url(../images/ic_cu.png);
+  left: 74.7487%;
+  top: 25.2513%;
+}
+.circle .ring > a:nth-child(3) {
+  background-image: url(../images/ic_coudanpin.png);
+  left: 85%;
+  top: 50%;
+}
+.circle .ring > a:nth-child(4) {
+  background-image: url(../images/ic_bcj.png);
+  left: 74.7487%;
+  top: 74.7487%;
+}
+.circle .ring > a:nth-child(5) {
+  background-image: url(../images/haitao.png);
+  left: 50%;
+  top: 85%;
+}
+.circle .ring > a:nth-child(6) {
+  background-image: url(../images/ic_temai.png);
+  left: 25.2513%;
+  top: 74.7487%;
+}
+.circle .ring > a:nth-child(7) {
+  background-image: url(../images/ic_coudanpin.png);
+  left: 15%;
+  top: 50%;
+}
+.circle .ring > a:nth-child(8) {
+  background-image: url(../images/home.png);
+  left: 25.2513%;
+  top: 25.2513%;
 }

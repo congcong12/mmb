@@ -1,0 +1,531 @@
+html {
+  font-size: 100px;
+}
+body {
+  font-size: 0.14rem;
+  background-color: #fff;
+  padding-top: .84rem;
+  padding-bottom: 1.1rem;
+}
+i {
+  font-style: normal;
+}
+img {
+  vertical-align: middle;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  font-weight: normal;
+  line-height: 0;
+  margin: 0;
+}
+input {
+  border: 0;
+}
+html,
+body {
+  height: 100%;
+}
+#main {
+  height: 100%;
+  overflow: hidden;
+  /* 注意还要给main加一个相对定位 因为里面的mui-scroll-wrapper设置了绝对定位 */
+  position: relative;
+}
+li {
+  list-style: none;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  padding: 0.09rem 0.1rem;
+  height: .44rem;
+  width: 100%;
+  border-bottom: 1px solid #d5d5d5;
+}
+#header .logo {
+  width: 27%;
+}
+#header .logo a {
+  display: block;
+}
+#header .logo a img {
+  max-width: 100%;
+  max-height: .24rem;
+}
+#header form {
+  flex: 1;
+  position: relative;
+}
+#header form i {
+  position: absolute;
+  left: 0.1rem;
+  top: 0.05rem;
+  color: #cecece;
+  font-weight: normal;
+}
+#header form input {
+  box-sizing: border-box;
+  width: 95%;
+  height: 0.25rem;
+  border-radius: 0.12rem;
+  background-color: #f9f9f9;
+  padding-left: .3rem;
+  text-align-last: left;
+}
+#header .download {
+  width: .36rem;
+  height: 0.2rem;
+  border: 1px solid #ff8e59;
+  border-radius: 0.1rem;
+  margin-top: .03rem;
+}
+#header .download a {
+  display: block;
+  width: 100%;
+  height: .2rem;
+  text-align: center;
+  color: #ff8e59;
+  line-height: 0.2rem;
+  font-size: .12rem;
+}
+#slider {
+  height: 0.4rem;
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  top: .44rem;
+  left: 0;
+  border-bottom: 1px solid #d5d5d5;
+}
+#slider > div {
+  height: 0.4rem;
+}
+#slider > div .mui-scroll {
+  width: 5.46rem;
+}
+#slider > div ul {
+  width: 5.46rem;
+  height: .4rem;
+}
+#slider > div ul li {
+  float: left;
+  height: 100%;
+  text-align: center;
+  padding: 0 .12rem;
+  line-height: 0.4rem;
+  font-size: .15rem;
+  font-weight: 700;
+}
+#slider > div ul li a {
+  display: block;
+  height: 100%;
+  position: relative;
+  color: #000;
+}
+#slider > div ul li a.active {
+  color: #ff8e59;
+}
+#slider > div ul li a.active::before {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 4px;
+  background: #f85000;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -12px;
+}
+#footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 1.1rem;
+  background-color: #efefef;
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+}
+#footer .top {
+  height: .4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #d5d5d5;
+  border-bottom: 1px solid #d5d5d5;
+}
+#footer .top > div {
+  flex: 1;
+  height: 100%;
+  text-align: center;
+  line-height: .4rem;
+  border-right: 1px solid #d5d5d5;
+}
+#footer .top > div.backTop img {
+  width: 0.15rem;
+  height: 0.15rem;
+}
+#footer .top > div.backTop span {
+  vertical-align: middle;
+}
+#footer .bottom {
+  padding: .2rem 0;
+}
+#footer .bottom p {
+  margin: 0;
+  height: .16rem;
+}
+#footer .bottom p:last-child {
+  font-size: .12rem;
+  height: .13rem;
+}
+#footer .bottom p a {
+  padding-right: 0.05rem;
+}
+#footer .bottom p span a {
+  color: #f76e6e;
+}
+.circle {
+  display: block;
+  position: absolute;
+  top: .45rem;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #b3b3b3;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  transform: translate(0, 0);
+  z-index: 2000;
+}
+.circle .ring {
+  z-index: 1999;
+  position: absolute;
+  left: .15rem;
+  top: .15rem;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+  overflow: hidden;
+}
+.circle .ring.open {
+  left: -0.45rem;
+  top: -0.45rem;
+  opacity: 1;
+  width: 1.2rem;
+  height: 1.2rem;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(1) rotate(0deg);
+  -moz-transform: scale(1) rotate(0deg);
+  -transform: scale(1) rotate(0deg);
+}
+.circle .menuItem {
+  border-radius: 50%;
+  color: #eeeeee;
+  display: block;
+  height: .3rem;
+  line-height: .3rem;
+  margin-left: -0.15rem;
+  margin-top: -0.15rem;
+  position: absolute;
+  text-align: center;
+  width: 30px;
+  background-size: .3rem .3rem;
+}
+.circle .ring > a:nth-child(1) {
+  background-image: url(../images/ic_search.png);
+  left: 50%;
+  top: 15%;
+}
+.circle .ring > a:nth-child(2) {
+  background-image: url(../images/ic_cu.png);
+  left: 74.7487%;
+  top: 25.2513%;
+}
+.circle .ring > a:nth-child(3) {
+  background-image: url(../images/ic_coudanpin.png);
+  left: 85%;
+  top: 50%;
+}
+.circle .ring > a:nth-child(4) {
+  background-image: url(../images/ic_bcj.png);
+  left: 74.7487%;
+  top: 74.7487%;
+}
+.circle .ring > a:nth-child(5) {
+  background-image: url(../images/haitao.png);
+  left: 50%;
+  top: 85%;
+}
+.circle .ring > a:nth-child(6) {
+  background-image: url(../images/ic_temai.png);
+  left: 25.2513%;
+  top: 74.7487%;
+}
+.circle .ring > a:nth-child(7) {
+  background-image: url(../images/ic_coudanpin.png);
+  left: 15%;
+  top: 50%;
+}
+.circle .ring > a:nth-child(8) {
+  background-image: url(../images/home.png);
+  left: 25.2513%;
+  top: 25.2513%;
+}
+#main #hotbrandRank .title {
+  padding: .1rem .05rem;
+  background-color: #f3f3f3;
+  color: #874604;
+  font-weight: 700;
+  font-size: .16rem;
+}
+#main #hotbrandRank .content ul li {
+  padding: .1rem .1rem;
+}
+#main #hotbrandRank .content ul li a {
+  display: flex;
+}
+#main #hotbrandRank .content ul li a .mui-badge {
+  width: 0.2rem;
+  height: 0.2rem;
+  margin-right: .1rem;
+  border-radius: 0;
+  text-align: center;
+  line-height: .2rem;
+  padding: 0;
+  color: #fff;
+  font-size: .14rem;
+}
+#main #hotbrandRank .content ul li a .info {
+  flex: 1;
+}
+#main #hotbrandRank .content ul li a .info p {
+  margin: 0;
+}
+#main #hotbrandRank .content ul li a .info p.name {
+  font-size: .16rem;
+  color: #000;
+}
+#main #hotbrandRank .content ul li a .info p.num {
+  font-size: .12rem;
+}
+#main #hotbrandRank .content ul li a .mui-icon {
+  width: 0.2rem;
+  height: 0.2rem;
+  margin-top: 0.1rem;
+}
+#main #sellRank .title {
+  padding: .1rem .05rem;
+  background-color: #f3f3f3;
+  color: #874604;
+  font-weight: 700;
+  font-size: .16rem;
+}
+#main #sellRank .content ul li a {
+  display: flex;
+}
+#main #sellRank .content ul li a .pic {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.1rem;
+}
+#main #sellRank .content ul li a .pic img {
+  max-width: 1rem;
+  max-height: 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+#main #sellRank .content ul li a .info {
+  flex: 1;
+}
+#main #sellRank .content ul li a .info .name {
+  white-space: normal;
+  color: #000;
+}
+#main #sellRank .content ul li a .info .price {
+  display: flex;
+  margin: 0.05rem 0;
+  justify-content: space-between;
+}
+#main #sellRank .content ul li a .info .price .productPrice {
+  color: #ea3900;
+  font-size: 0.18rem;
+}
+#main #sellRank .content ul li a .info .price > i {
+  font-size: .22rem;
+  color: #ff9000;
+}
+#main #sellRank .content ul li a .comment {
+  font-size: .12rem;
+}
+#main #userComment {
+  background-color: #f2f2f2;
+}
+#main #userComment > div.title {
+  padding: .1rem .05rem;
+  background-color: #f3f3f3;
+  color: #874604;
+  font-weight: 700;
+  font-size: .16rem;
+  border-top: 1px solid #d0d0d0;
+  border-bottom: 1px solid #d0d0d0;
+}
+#main #userComment .content li > a {
+  display: flex;
+}
+#main #userComment .content li > a .pic {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.1rem;
+}
+#main #userComment .content li > a .pic img {
+  max-width: 1rem;
+  max-height: 1rem;
+  width: 1rem;
+  height: 1rem;
+}
+#main #userComment .content li > a .info {
+  flex: 1;
+}
+#main #userComment .content li > a .info .name {
+  white-space: normal;
+  color: #000;
+  font-size: .16rem;
+}
+#main #userComment .content li .comment {
+  margin-top: .1rem;
+  padding: .1rem .1rem;
+  background-color: #fff;
+}
+#main #userComment .content li .comment .title {
+  display: flex;
+  justify-content: space-between;
+}
+#main #userComment .content li .comment .title span {
+  color: #000;
+}
+#main #userComment .content li .comment .title span .star {
+  margin-left: .05rem;
+  font-size: .24rem;
+  color: #ff9000;
+}
+#main #userComment .content li .comment .content {
+  margin-top: 0.15rem;
+  font-size: .16rem;
+  color: #000;
+}
+.circle {
+  display: block;
+  position: absolute;
+  top: .45rem;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #b3b3b3;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  transform: translate(0, 0);
+  z-index: 2000;
+}
+.circle .ring {
+  z-index: 1999;
+  position: absolute;
+  left: .15rem;
+  top: .15rem;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+  overflow: hidden;
+}
+.circle .ring.open {
+  left: -0.45rem;
+  top: -0.45rem;
+  opacity: 1;
+  width: 1.2rem;
+  height: 1.2rem;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(1) rotate(0deg);
+  -moz-transform: scale(1) rotate(0deg);
+  -transform: scale(1) rotate(0deg);
+}
+.circle .menuItem {
+  border-radius: 50%;
+  color: #eeeeee;
+  display: block;
+  height: .3rem;
+  line-height: .3rem;
+  margin-left: -0.15rem;
+  margin-top: -0.15rem;
+  position: absolute;
+  text-align: center;
+  width: 30px;
+  background-size: .3rem .3rem;
+}
+.circle .ring > a:nth-child(1) {
+  background-image: url(../images/ic_search.png);
+  left: 50%;
+  top: 15%;
+}
+.circle .ring > a:nth-child(2) {
+  background-image: url(../images/ic_cu.png);
+  left: 74.7487%;
+  top: 25.2513%;
+}
+.circle .ring > a:nth-child(3) {
+  background-image: url(../images/ic_coudanpin.png);
+  left: 85%;
+  top: 50%;
+}
+.circle .ring > a:nth-child(4) {
+  background-image: url(../images/ic_bcj.png);
+  left: 74.7487%;
+  top: 74.7487%;
+}
+.circle .ring > a:nth-child(5) {
+  background-image: url(../images/haitao.png);
+  left: 50%;
+  top: 85%;
+}
+.circle .ring > a:nth-child(6) {
+  background-image: url(../images/ic_temai.png);
+  left: 25.2513%;
+  top: 74.7487%;
+}
+.circle .ring > a:nth-child(7) {
+  background-image: url(../images/ic_coudanpin.png);
+  left: 15%;
+  top: 50%;
+}
+.circle .ring > a:nth-child(8) {
+  background-image: url(../images/home.png);
+  left: 25.2513%;
+  top: 25.2513%;
+}

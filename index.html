@@ -16,6 +16,17 @@
 </head>
 
 <body>
+        <div class="circle" data-id="0">
+                <div class="ring"><a href="category.html" class="menuItem"></a>
+                    <a href="moneyctrl.html" class="menuItem"></a>
+                    <a href="inlanddiscount.html" class="menuItem"></a>
+                    <a href="baicaijia.html" class="menuItem"></a>
+                    <a href="moneyctrl.html" class="menuItem"></a>
+                    <a href="coupon.html" class="menuItem"></a>
+                    <a href="gsproduct.html" class="menuItem"></a>
+                    <a href="index.html" class="menuItem"></a>
+                </div>
+            </div>
     <!-- 头部区域 -->
     <header id="header">
         <div class="logo">
@@ -27,9 +38,28 @@
         </form>
         <div class="download"><a href="#">下载</a></div>
     </header>
+    <!--这里放置真实显示的DOM内容-->
+    <section id="slider">
+        <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+            <div class="mui-scroll">
+                <!-- 滑动菜单 -->
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="category.html">比价搜索</a></li>
+                    <li><a href="brandtitle.html">品牌大全</a></li>
+                    <li><a href="moneyctrl.html">省钱控</a></li>
+                    <li><a href="inlanddiscount.html">国内折扣</a></li>
+                    <li><a href="baicaijia.html">白菜价</a></li>
+                    <li><a href="sitenav.html">商场导航</a></li>
+                </ul>
+
+
+            </div>
+        </div> 
+    </section>
     <main id="main">
         <!-- 区域滚动的父容器 高度是固定的-->
-        <div class="mui-scroll-wrapper">
+        <div class="mui-scroll-wrapper asd">
             <!-- 区域滚动的子容器 高度是由内容撑开的 -->
             <div class="mui-scroll">
                 <!--这里放置真实显示的DOM内容-->
@@ -89,7 +119,7 @@
                         <div class="backTop">
                             <a href="#">
                                 <img src="http://www.zuyushop.com/wap/images/top.jpg" alt="">
-                                <span class="btn-top"> 返回顶部</span>
+                                <span class="btn-top">返回顶部</span>
                             </a> </div>
                     </div>
                     <div class="bottom">
@@ -104,16 +134,14 @@
 </body>
 <script id="indexMenuTpl" type="text/html">
     {{each result value i }}
-            {{ if(i <=3) }}
-            <div class="mui-col-xs-3 animated fadeInDown"><a href="{{value.titlehref}}">{{@value.img}}<p>{{value.name}}</p></a></div>
-            {{ else if(i<=6) }}
-            <div class="mui-col-xs-3 animated flipInX"><a href="{{value.titlehref}}">{{@value.img}}<p>{{value.name}}</p></a></div>
-            {{ else if(i==7) }}
-            <div class="mui-col-xs-3 btn animated jackInTheBox" data-index=1><a href="javascript:;">{{@value.img}}<p>{{value.name}}</p></a></div>
-            {{else if(i>7) }}
-            <div class="mui-col-xs-3 more animated zoomIn" style="display:none"><a href="{{value.titlehref}}">{{@value.img}}<p>{{value.name}}</p></a></div>
-            {{/if}}
-    {{/each}}
+    {{ if(i <=6) }}
+    <div class="mui-col-xs-3"><a href="{{value.titlehref}}">{{@value.img}}<p>{{value.name}}</p></a></div>
+    {{ else if(i==7) }}
+    <div class="mui-col-xs-3 btn" data-index=1><a href="javascript:;">{{@value.img}}<p>{{value.name}}</p></a></div>
+    {{else }}
+    <div class="mui-col-xs-3 more" style="display:none"><a href="{{value.titlehref}}">{{@value.img}}<p>{{value.name}}</p></a></div>
+    {{/if}}
+{{/each}}
 </script>
 <script id="agioTpl" type="text/html">
     {{ each result value}}

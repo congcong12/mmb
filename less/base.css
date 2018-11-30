@@ -1,3 +1,99 @@
+.circle {
+  display: block;
+  position: absolute;
+  top: .45rem;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #b3b3b3;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  transform: translate(0, 0);
+  z-index: 2000;
+}
+.circle .ring {
+  z-index: 1999;
+  position: absolute;
+  left: .15rem;
+  top: .15rem;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+  overflow: hidden;
+}
+.circle .ring.open {
+  left: -0.45rem;
+  top: -0.45rem;
+  opacity: 1;
+  width: 1.2rem;
+  height: 1.2rem;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(1) rotate(0deg);
+  -moz-transform: scale(1) rotate(0deg);
+  -transform: scale(1) rotate(0deg);
+}
+.circle .menuItem {
+  border-radius: 50%;
+  color: #eeeeee;
+  display: block;
+  height: .3rem;
+  line-height: .3rem;
+  margin-left: -0.15rem;
+  margin-top: -0.15rem;
+  position: absolute;
+  text-align: center;
+  width: 30px;
+  background-size: .3rem .3rem;
+}
+.circle .ring > a:nth-child(1) {
+  background-image: url(../images/ic_search.png);
+  left: 50%;
+  top: 15%;
+}
+.circle .ring > a:nth-child(2) {
+  background-image: url(../images/ic_cu.png);
+  left: 74.7487%;
+  top: 25.2513%;
+}
+.circle .ring > a:nth-child(3) {
+  background-image: url(../images/ic_coudanpin.png);
+  left: 85%;
+  top: 50%;
+}
+.circle .ring > a:nth-child(4) {
+  background-image: url(../images/ic_bcj.png);
+  left: 74.7487%;
+  top: 74.7487%;
+}
+.circle .ring > a:nth-child(5) {
+  background-image: url(../images/haitao.png);
+  left: 50%;
+  top: 85%;
+}
+.circle .ring > a:nth-child(6) {
+  background-image: url(../images/ic_temai.png);
+  left: 25.2513%;
+  top: 74.7487%;
+}
+.circle .ring > a:nth-child(7) {
+  background-image: url(../images/ic_coudanpin.png);
+  left: 15%;
+  top: 50%;
+}
+.circle .ring > a:nth-child(8) {
+  background-image: url(../images/home.png);
+  left: 25.2513%;
+  top: 25.2513%;
+}
 html {
   font-size: 100px;
 }
